@@ -1,0 +1,254 @@
+* {
+  background-color: rgba(29, 29, 44, 1);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+button {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 40px;
+    padding: 15px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+  }
+  
+  .header-title {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: black;
+  }
+  
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: black;
+  }
+  
+  .header-link {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+    padding: 10px 20px;
+  }
+  .header-link:hover {
+    outline: none;
+    background-color: rgba(127, 127, 142, 0.986);
+  }
+  #authorization {
+    background-color: transparent;
+    display: flex;
+  }
+  #signin {
+    margin-right: 15px;
+    color: white;
+  }
+  #login {
+    background-color: white;
+    color: black;
+  }
+
+  #login, #signin {
+    border: solid 1px white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1600px) {
+    .header-link {
+      padding: 5px 10px;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .header-link {
+      padding: 2px 4px;
+      margin: 0 3px;
+    }
+    #login, #signin {
+      padding: 5px 10px;
+    }
+  }
+  @media screen and (max-width: 1085) {
+    #signin {
+      margin-right: 0px;
+    }
+  }
+
+
+#album {
+    margin: 1%;
+    border-radius: 20px;
+    padding: 2%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: black;
+}
+#album * {
+    background-color: transparent;
+    color: white;
+}
+#album:hover {
+    transform: scale(1.05);
+}
+#albumCover {
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+}
+#cardInfo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+#albumTitle {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 45px;
+    width: 250px;
+}
+#albumYear {
+    color: rgb(111, 111, 111);
+}
+
+
+
+
+#albums {
+    padding: 0% 10% 10% 8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+.inputLabel {
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    word-break: break-word;
+}
+#metadataField {
+    width: 500px;
+}
+@media screen and (max-width: 1500px) {
+  #metadataField {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .input input[type="text"] {
+   width: 10px;
+ }
+}
+@media screen and (max-width: 1085px) {
+ .input input[type="text"] {
+   display: none;
+ }
+}
+.input * {
+  background-color: black;
+}
+.input input[type="text"] {
+    padding: 7px;
+    padding-left: 15px;
+    border: solid white;
+    border-width: 1px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+ }
+ .input input[type="text"]:focus {
+    outline: none;
+    border-width: 2px;
+ }
+
+
+
+
+ .song {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+.song:hover {
+  outline: none;
+  background-color: rgba(98, 98, 112, 0.986);
+
+  #songArtist {
+    color: white;
+  }
+}
+  
+  #songCover {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  #songDetails {
+    display: flex;
+    flex: 1;
+    background-color: transparent;
+  }
+  
+  #songTitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    background-color: transparent;
+  }
+  
+  #songArtist {
+    font-size: 15px;
+    color: rgb(128, 114, 183);
+    margin-bottom: 5px;
+    background-color: transparent;
+  }
+#songTitleArtist {  
+  background-color: transparent;
+}
+#songDuration {  
+  background-color: transparent;
+}
+  
+
+
+
+#songs {
+    margin: 40px 100px;
+}
