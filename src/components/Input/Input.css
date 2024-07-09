@@ -1,0 +1,44 @@
+.inputLabel {
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    word-break: break-word;
+}
+#metadataField {
+    width: 500px;
+}
+@media screen and (max-width: 1500px) {
+  #metadataField {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .input input[type="text"] {
+   width: 10px;
+ }
+}
+@media screen and (max-width: 1085px) {
+ .input input[type="text"] {
+   display: none;
+ }
+}
+.input * {
+  background-color: black;
+}
+.input input[type="text"] {
+    padding: 7px;
+    padding-left: 15px;
+    border: solid white;
+    border-width: 1px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+ }
+ .input input[type="text"]:focus {
+    outline: none;
+    border-width: 2px;
+ }
