@@ -27,9 +27,8 @@ export default function Login() {
         {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "application/json"
+            Accept: "application/json",
           },
-          withCredentials: true,
         }
       );
 
