@@ -47,7 +47,8 @@ const Header: FC = () => {
       </div>
       <div className={styles.logo}>InnoMusic</div>
       <div className={styles.buttons}>
-        <button className={styles.button}>About us</button>
+        {/* About page redirection will be here */}
+        <button className={styles.button}>About us</button>{" "}
         <button className={styles.button}>Premium</button>
         <button className={styles.button}>Download</button>
         <a className={styles.stick}>|</a>
