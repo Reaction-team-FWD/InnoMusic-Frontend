@@ -49,14 +49,14 @@ export default function Login() {
           <h1 className={styles.title}>Login</h1>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.form_group}>
-              <label htmlFor="username" className={styles.label}>
-                Username
+              <label htmlFor="email" className={styles.label}>
+                Email
               </label>
               <input
                 type="text"
-                id="username"
+                id="email"
                 className={styles.input}
-                placeholder="Enter your username"
+                placeholder="Enter your email"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required

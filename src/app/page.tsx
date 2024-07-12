@@ -1,4 +1,3 @@
-"use client";
 import Header from "../components/Header/Header";
 import "./globals.css";
 import styles from "./Main.module.scss";
