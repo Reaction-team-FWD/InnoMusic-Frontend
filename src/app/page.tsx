@@ -1,6 +1,6 @@
 import Header from "../components/Header/Header";
-import "./globals.css";
 import styles from "./Home.module.scss";
+import "./globals.scss";
 
 export default function Home() {
   return (
