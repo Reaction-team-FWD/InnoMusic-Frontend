@@ -1,0 +1,11 @@
+#albums {
+    padding: 0% 10% 10% 8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

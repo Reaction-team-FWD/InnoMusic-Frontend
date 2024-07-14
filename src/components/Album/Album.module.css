@@ -1,0 +1,39 @@
+.album {
+    margin: 1%;
+    border-radius: 20px;
+    padding: 2%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: black;
+}
+.album * {
+    color: white;
+    background-color: black;
+}
+.album:hover {
+    transform: scale(1.05);
+}
+.albumCover {
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+.cardInfo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+    background-color: black;
+}
+.albumTitle {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    width: 250px;
+    margin-bottom: 10px;
+    background-color: black;
+}
+.albumYear {
+    color: rgb(111, 111, 111);
+    background-color: black;
+}

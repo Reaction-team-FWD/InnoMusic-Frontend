@@ -1,5 +1,5 @@
 import React from 'react'
-import Albums from '../components/Albums'
+import Albums from '../components/Albums/Albums'
 import Head from 'next/head';
 
 const AlbumsPage: React.FC = () => {

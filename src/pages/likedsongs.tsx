@@ -1,5 +1,5 @@
 import React from 'react';
-import Songs from '../components/Songs';
+import Songs from '../components/Songs/Songs';
 import Head from 'next/head';
 
 const SongsPage: React.FC = () => {
