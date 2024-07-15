@@ -21,6 +21,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.redirectionLink {
+  text-decoration: none;
 }
 
 .logo:hover {
