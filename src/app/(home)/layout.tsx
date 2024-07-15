@@ -1,5 +1,5 @@
 import { MainHeader } from "@/components/MainHeader";
-import styles from "./home.module.scss";
+import styles from "./home/home.module.scss";
 import React from "react";
 import "../globals.scss";
 
