@@ -1,0 +1,77 @@
+.plansContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(29, 29, 44, 1);
+  align-items: center;
+}
+
+.plansInformationIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+}
+
+.plansInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.plansTitle {
+  color: white;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.plansTitleDescription {
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.planTypes {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.planType {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  height: 450px;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+}
+
+.planTitle {
+  font-size: 24px;
+  color: #000000;
+  font-weight: 600;
+}
+.planInfo {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 10px;
+  gap: 10px;
+}
+.planDiscount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  height: 27px;
+  width: 100px;
+  background-color: #0d72ea;
+  border-radius: 5px;
+  color: #ffffff;
+}

@@ -1,8 +1,6 @@
 .homePageContainer {
   height: 100%;
   width: 100%;
-  background-color: rgba(29, 29, 44, 1);
-
 }
 
 .container {
@@ -79,6 +77,11 @@
       transform: scale(1.1);
     }
   }
+}
+
+.buttonLink {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .benefits {

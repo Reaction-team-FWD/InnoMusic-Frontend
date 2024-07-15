@@ -10,6 +10,19 @@
   width: 100%;
 }
 
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+  }
+}
+
 .logo {
   font-size: 36px;
   font-weight: bold;
@@ -21,34 +34,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.4s ease;
-  cursor: pointer;
 }
 
 .redirectionLink {
+  justify-content: center;
   text-decoration: none;
-}
-
-.logo:hover {
-  background-position: 0 0;
-}
-
-.logo::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to left, #fff7fc 50%, #1ed760 50%);
-  background-size: 200% 100%;
-  background-position: -100% 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.4s ease;
-}
-
-.logo:hover::after {
-  background-position: 0 0;
 }
 
 .icon {
@@ -59,9 +49,12 @@
 }
 
 .buttons {
+  display: flex;
+  align-items: center;
   margin-left: auto;
   padding-right: 8em;
   display: flex;
+  justify-content: center;
   gap: 35px;
 }
 
@@ -83,6 +76,7 @@
   font-size: 20px;
   font-weight: 50;
   cursor: default;
+  text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
 }

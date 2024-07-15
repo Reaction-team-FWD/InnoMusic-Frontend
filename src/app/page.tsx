@@ -9,20 +9,21 @@ export default function MainPage() {
       <Header />
       <div className={styles.container}>
         <div className={styles.introduction}>
-          <div className={styles.title}>Neque porro quisquam est qui</div>
+          <div className={styles.title}>Have you already tried InnoMusic?</div>
           <div className={styles.description}>
-            It is a long established fact that a reader will be distracted by
-            the readable content.
+            It is almost free music streaming service. Check out our free plan!
           </div>
           <div className={styles.buttons}>
             <Link href={"./home"}>
               <button className={styles.first_button}>GET STARTED</button>
             </Link>
-            <button className={styles.second_button}>SEE OTHER PLANS</button>
+            <button className={styles.second_button}>
+              <Link href={"./plans"} className={styles.buttonLink}>SEE OTHER PLANS</Link>
+            </button>
           </div>
           <div className={styles.extra_description}>
-            <u>Contrary to popular belief</u>, Lorem Ipsum is not simply random
-            text.
+            <u>Terms and conditions apply</u>, 1 month free only for Innopolis
+            University students
           </div>
         </div>
         <div className={styles.benefits}>
