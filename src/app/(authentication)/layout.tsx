@@ -1,7 +1,7 @@
 import { AuthHeader } from "@/components/AuthHeader";
-import styles from "./home.module.scss";
+import styles from "../main.module.scss";
 import React from "react";
-import "../../app/globals.scss";
+import "../globals.scss";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

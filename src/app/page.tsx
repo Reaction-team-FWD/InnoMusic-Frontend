@@ -1,4 +1,4 @@
-import Header from "../components/Header/Header";
+import { Header } from "@/components/Header";
 import styles from "./main.module.scss";
 import Link from "next/link";
 import "./globals.scss";

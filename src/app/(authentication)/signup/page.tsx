@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { AuthHeader } from "@/components/AuthHeader";
 import styles from "./SignUp.module.scss";
-import "../globals.scss";
+import "../../globals.scss";
 
 export default function SignUpPage() {
   const [username, setUsername] = useState("");
