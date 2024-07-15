@@ -3,12 +3,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { AuthHeader } from "@/components/AuthHeader";
-import styles from "./SignUp.module.scss";
+import styles from "./Login.module.scss";
 import "../globals.scss";
 
-export default function SignUpPage() {
+export default function Login() {
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,22 +19,23 @@ export default function SignUpPage() {
 
     try {
       const response = await axios.post(
-        "http://84.235.249.242:8000/auth/register",
-        {
-          name: username,
-          login: email,
-          password: password,
-        },
+        "http://84.235.249.242:8000/auth/login",
+        new URLSearchParams({
+          username,
+          password,
+        }),
         {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
           },
         }
       );
 
-      setNotification("Registration successful!");
+      const { access_token } = response.data;
+      setNotification("You have logged in!");
     } catch (error) {
-      setNotification("Registration failed. Please try again.");
+      setNotification("Invalid username or password");
     } finally {
       setLoading(false);
     }
@@ -43,36 +43,21 @@ export default function SignUpPage() {
 
   return (
     <>
-      <AuthHeader />
       <div className={styles.container}>
-        <div className={styles.sign_up_container}>
-          <h1 className={styles.title}>Sign Up</h1>
+        <div className={styles.login_container}>
+          <h1 className={styles.title}>Login</h1>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.form_group}>
-              <label htmlFor="username" className={styles.label}>
-                Username
+              <label htmlFor="email" className={styles.label}>
+                Email
               </label>
               <input
                 type="text"
-                id="username"
-                className={styles.input}
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </div>
-            <div className={styles.form_group}>
-              <label htmlFor="email" className={styles.label}>
-                Email address
-              </label>
-              <input
-                type="email"
                 id="email"
                 className={styles.input}
                 placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
@@ -92,7 +77,7 @@ export default function SignUpPage() {
             </div>
             {error && <p className={styles.error}>{error}</p>}
             <button type="submit" className={styles.button} disabled={loading}>
-              {loading ? "SIGNING UP..." : "SIGN UP"}
+              {loading ? "LOGGING IN..." : "LOG IN"}
             </button>
           </form>
         </div>

@@ -1,8 +1,9 @@
 import Header from "../components/Header/Header";
 import styles from "./main.module.scss";
+import Link from "next/link";
 import "./globals.scss";
 
-export default function Home() {
+export default function MainPage() {
   return (
     <>
       <Header />
@@ -14,7 +15,9 @@ export default function Home() {
             the readable content.
           </div>
           <div className={styles.buttons}>
-            <button className={styles.first_button}>GET STARTED</button>
+            <Link href={"./home"}>
+              <button className={styles.first_button}>GET STARTED</button>
+            </Link>
             <button className={styles.second_button}>SEE OTHER PLANS</button>
           </div>
           <div className={styles.extra_description}>

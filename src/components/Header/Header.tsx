@@ -45,7 +45,9 @@ const Header: FC = () => {
           />
         </svg>
       </div>
-      <div className={styles.logo}>InnoMusic</div>
+      <Link href="./" className={styles.redirectionLink}>
+        <div className={styles.logo}>InnoMusic</div>
+      </Link>
       <div className={styles.buttons}>
         {/* About page redirection will be here */}
         <button className={styles.button}>About us</button>{" "}
