@@ -1,5 +1,6 @@
 import styles from "./about.module.scss";
 import "./about.scss";
+import Image from "next/image";
 
 export const metadata = {
   title: "About Us",
@@ -24,7 +25,7 @@ export default function AboutPage() {
           <h2>Our Team</h2>
           <div className={styles.team_member}>
             <h3>Oleg Shchendrigin</h3>
-            <img
+            <Image
               src="blob:https://web.telegram.org/40344f63-e611-4964-915c-e5e7ebc530d1"
               alt="Daniel Ek"
               className={styles.team_photo}
@@ -32,7 +33,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.team_member}>
             <h3>Maxim Fomin</h3>
-            <img
+            <Image
               src="blob:https://web.telegram.org/6ee4530a-d41f-4a53-b52e-c334a85a1235"
               alt="Martin Lorentzon"
               className={styles.team_photo}
@@ -40,7 +41,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.team_member}>
             <h3>Egor Chernobrovkin</h3>
-            <img
+            <Image
               src="blob:https://web.telegram.org/e799f5ca-7e82-41fa-bf5d-13774271d867"
               alt="Dawn Ostroff"
               className={styles.team_photo}
@@ -48,7 +49,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.team_member}>
             <h3>Adilia Saifetdiarova</h3>
-            <img
+            <Image
               src="blob:https://web.telegram.org/89814f13-c635-4a35-8f89-ae216c0b66af"
               alt="Dawn Ostroff"
               className={styles.team_photo}
@@ -56,7 +57,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.team_member}>
             <h3>Timur Farizunov</h3>
-            <img
+            <Image
               src="blob:https://web.telegram.org/203ed95f-59e0-4e74-b29f-3719ece1ce33"
               alt="Dawn Ostroff"
               className={styles.team_photo}

@@ -21,7 +21,7 @@ const Header = () => {
           <Link href="/search" className={styles.header_link}>
             Search
           </Link>
-          <Link href="/" className={styles.header_link}>
+          <Link href="/home" className={styles.header_link}>
             My music
           </Link>
           <Link href="/likedsongs" className={styles.header_link}>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Album.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface AlbumProps {
   id: string;
@@ -13,7 +14,7 @@ const Album: React.FC<AlbumProps> = ({ id, title, artist, year }) => {
   return (
     <div className={styles.album}>
       <Link href={`/home/${id}?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}&year=${encodeURIComponent(year)}`}>
-          <img
+          <Image
             className={styles.albumCover}
             src="/img/albumCover.png"
             alt="Album cover"
