@@ -29,7 +29,45 @@ export default function PlansPage() {
       <div className={styles.planTypes}>
         <div className={styles.planType}>
           <div className={styles.planInfo}>
+            <div className={styles.planNotification}>Trial version</div>
             <div className={styles.planTitle}>Free</div>
+            <div className={styles.planCost}>₹0/month</div>
+            <div className={styles.planConstraints}>
+              1 account on mobile only
+            </div>
+            <div className={styles.delimeter}></div>
+          </div>
+          <div className={styles.planBenefits}>
+            <div className={styles.planBenefit}>
+              <Image src={benefit} width={24} height={26} alt="benefit" />
+              <div className={styles.planBenefitText}>For broke students</div>
+            </div>
+            <div className={styles.planBenefit}>
+              <Image src={benefit} width={24} height={26} alt="benefit" />
+              <div className={styles.planBenefitText}>
+                Only Russian songs are available
+              </div>
+            </div>
+            <div className={styles.planBenefit}>
+              <Image src={benefit} width={24} height={26} alt="benefit" />
+              <div className={styles.planBenefitText}>
+                Ad break every 10 seconds
+              </div>
+            </div>
+            <div className={styles.planBenefit}>
+              <Image src={benefit} width={24} height={26} alt="benefit" />
+              <div className={styles.planBenefitText}>
+                No background listening
+              </div>
+            </div>
+            <div className={styles.planBenefit}>
+              <Image src={benefit} width={24} height={26} alt="benefit" />
+              <div className={styles.planBenefitText}>Almost free plan</div>
+            </div>
+            <div className={styles.delimeter}></div>
+          </div>
+          <div className={styles.buyButtonContainer}>
+            <button className={styles.buyButton}>CHOOSE PLAN</button>
           </div>
         </div>
         <div className={styles.planType}>
@@ -46,7 +84,7 @@ export default function PlansPage() {
             <div className={styles.planBenefit}>
               <Image src={benefit} width={24} height={26} alt="benefit" />
               <div className={styles.planBenefitText}>
-                For family who live together
+                For frontend students only
               </div>
             </div>
             <div className={styles.planBenefit}>
@@ -56,7 +94,7 @@ export default function PlansPage() {
             <div className={styles.planBenefit}>
               <Image src={benefit} width={24} height={26} alt="benefit" />
               <div className={styles.planBenefitText}>
-                Ad-free music listening
+                Ad-free music listening on mobile
               </div>
             </div>
             <div className={styles.planBenefit}>
@@ -66,7 +104,7 @@ export default function PlansPage() {
             <div className={styles.planBenefit}>
               <Image src={benefit} width={24} height={26} alt="benefit" />
               <div className={styles.planBenefitText}>
-                Download 10k songs/device on 5 devices
+                Download 30 songs on 1 mobile device
               </div>
             </div>
             <div className={styles.delimeter}></div>
