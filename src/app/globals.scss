@@ -28,6 +28,14 @@ body {
     sans-serif;
 }
 
-a {
+Link {
+  text-decoration: none;
+}
+Link:hover {
+  text-decoration: none;
+}
+
+Link:active,
+Link:visited {
   text-decoration: none;
 }

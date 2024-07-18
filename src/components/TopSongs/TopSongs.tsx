@@ -8,6 +8,7 @@ export default function TopSongs({ songs }: { songs: SongCardProps[] }) {
   for (let song of songs) {
     songsElements.push(
       <Song
+        id="1"
         key={song.title}
         title={song.title}
         artist={song.artist}

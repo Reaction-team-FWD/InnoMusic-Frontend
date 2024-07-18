@@ -1,6 +1,6 @@
 import classes from './Artists.module.scss';
 import React from 'react';
-import { Artist } from '@/components/Artist';
+import { Artist as ArtistType } from '@/components/Artist';
 import { SearchResultBlock } from '@/components/SearchResultBlock';
 
 export interface Artist {
@@ -12,7 +12,7 @@ export default function Artists({ artists }: { artists: Artist[] }) {
   let artistElements: React.ReactNode[] = [];
   for (let artist of artists) {
     artistElements.push(
-      <Artist imageSrc={artist.imageUrl} name={artist.name} />
+      <ArtistType imageSrc={artist.imageUrl} name={artist.name} />
     );
   }
 

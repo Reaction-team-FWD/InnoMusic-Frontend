@@ -13,6 +13,7 @@ interface SongCardProps {
 const Song: React.FC<SongCardProps> = ({ id, title, artist, duration }) => {
   return (
     <Link
+      className={styles.songLink}
       href={`/home/${id}?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`}
     >
       <div className={styles.song}>
