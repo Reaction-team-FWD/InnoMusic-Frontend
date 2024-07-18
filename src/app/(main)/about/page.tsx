@@ -6,94 +6,62 @@ export const metadata = {
   title: "About Us",
   description: "Learn more about Spotify",
 };
+import './about.module.scss'
+import './about.scss'
+import Oleg from "/public/img/photos/oleg.jpg"
+import Max from "/public/img/photos/max.jpg"
+import Egor from "/public/img/photos/egor.jpg"
+import DiDi from "/public/img/photos/didi.jpg"
+import Tim from "/public/img/photos/tim.jpg"
 
 export default function AboutPage() {
   return (
-    <div className={styles.about_container}>
-      <main className={styles.about_main}>
-        <h1>About Us</h1>
-        <section>
-          <h2>Our Mission</h2>
-          <p>
-            Our mission is to unlock the potential of human creativity—by giving
-            a million creative artists the opportunity to live off their art and
-            billions of fans the opportunity to enjoy and be inspired by it.
-          </p>
-        </section>
+      <div className="about-container">
+        <main className="about-main">
+          <h1>About Us</h1>
+          <section>
+            <h2>Our Mission</h2>
+            <p>
+              Our mission is to unlock the potential of human creativity—by giving a million creative artists the
+              opportunity to live off their art and billions of fans the opportunity to enjoy and be inspired by it.
+            </p>
+          </section>
 
-        <section>
-          <h2>Our Team</h2>
-          <div className={styles.team_member}>
-            <h3>Oleg Shchendrigin</h3>
-            <Image
-              src="blob:https://web.telegram.org/40344f63-e611-4964-915c-e5e7ebc530d1"
-              alt="Daniel Ek"
-              className={styles.team_photo}
-            />
-          </div>
-          <div className={styles.team_member}>
-            <h3>Maxim Fomin</h3>
-            <Image
-              src="blob:https://web.telegram.org/6ee4530a-d41f-4a53-b52e-c334a85a1235"
-              alt="Martin Lorentzon"
-              className={styles.team_photo}
-            />
-          </div>
-          <div className={styles.team_member}>
-            <h3>Egor Chernobrovkin</h3>
-            <Image
-              src="blob:https://web.telegram.org/e799f5ca-7e82-41fa-bf5d-13774271d867"
-              alt="Dawn Ostroff"
-              className={styles.team_photo}
-            />
-          </div>
-          <div className={styles.team_member}>
-            <h3>Adilia Saifetdiarova</h3>
-            <Image
-              src="blob:https://web.telegram.org/89814f13-c635-4a35-8f89-ae216c0b66af"
-              alt="Dawn Ostroff"
-              className={styles.team_photo}
-            />
-          </div>
-          <div className={styles.team_member}>
-            <h3>Timur Farizunov</h3>
-            <Image
-              src="blob:https://web.telegram.org/203ed95f-59e0-4e74-b29f-3719ece1ce33"
-              alt="Dawn Ostroff"
-              className={styles.team_photo}
-            />
-          </div>
-        </section>
+          <section>
+            <h2>Our Team</h2>
+            <div className="team-member">
+              <h3>Oleg Shchendrigin</h3>
+              <Image src={Oleg} width={500} height={500} alt="Oleg Shchendrigin" className="team-photo"/>
+            </div>
+            <div className="team-member">
+              <h3>Maxim Fomin</h3>
+              <Image src={Max} width={500} height={500} alt="Maxim Fomin" className="team-photo"/>
+            </div>
+            <div className="team-member">
+              <h3>Egor Chernobrovkin</h3>
+              <Image src={Egor} width={500} height={500} alt="Egor Chernobrovkin" className="team-photo"/>
+            </div>
+            <div className="team-member">
+              <h3>Adilia Saifetdiarova</h3>
+              <Image src={DiDi} width={500} height={500} alt="Adilia Saifetdiarova" className="team-photo"/>
+            </div>
+            <div className="team-member">
+              <h3>Timur Farizunov</h3>
+              <Image src={Tim} width={500} height={500} alt="Timur Farizunov" className="team-photo"/>
+            </div>
+          </section>
 
-        <section>
-          <h2>Contact Us</h2>
-          <ul className={styles.contact_list}>
-            <li>
-              <a href="o.shchendrigin@innopolis.university">
-                o.shchendrigin@innopolis.university
-              </a>
-            </li>
-            <li>
-              <a href="m.fomin@innopolis.university">
-                m.fomin@innopolis.university
-              </a>
-            </li>
-            <li>
-              <a href="e.chernobrovkin@innopolis.university">
-                e.chernobrovkin@innopolis.university
-              </a>
-            </li>
-            <li>
-              <a href="sayfetik2005@gmail.com">sayfetik2005@gmail.com</a>
-            </li>
-            <li>
-              <a href="t.farizunov@innopolis.university">
-                t.farizunov@innopolis.university
-              </a>
-            </li>
-          </ul>
-        </section>
-      </main>
-    </div>
+          <section>
+            <h2>Contact Us</h2>
+            <ul className="contact-list">
+              <li><a href="mailto:o.shchendrigin@innopolis.university">o.shchendrigin@innopolis.university</a></li>
+              <li><a href="mailto:m.fomin@innopolis.university">m.fomin@innopolis.university</a></li>
+              <li><a href="mailto:e.chernobrovkin@innopolis.university">e.chernobrovkin@innopolis.university</a></li>
+              <li><a href="mailto:sayfetik2005@gmail.com">sayfetik2005@gmail.com</a></li>
+              <li><a href="mailto:t.farizunov@innopolis.university">t.farizunov@innopolis.university</a></li>
+            </ul>
+          </section>
+        </main>
+      </div>
   );
 }
