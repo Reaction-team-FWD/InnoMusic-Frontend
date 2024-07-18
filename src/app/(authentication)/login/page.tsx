@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
-import styles from './Login.module.scss';
+import styles from './login.module.scss';
 import '../../globals.scss';
 
 export default function Login() {

@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import styles from './SignUp.module.scss';
+import styles from './signup.module.scss';
 import '../../globals.scss';
 
 export default function SignUpPage() {
