@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Album.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import albumCover from '@/../public/img/albumCover.png';
 
 export interface AlbumProps {
   id: string;
@@ -18,7 +19,7 @@ const Album: React.FC<AlbumProps> = ({ id, title, artist, year }) => {
       >
         <Image
           className={styles.albumCover}
-          src="/img/albumCover.png"
+          src={albumCover}
           alt="Album cover"
         />
         <div className={styles.cardInfo}>

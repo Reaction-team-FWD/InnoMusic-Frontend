@@ -8,6 +8,7 @@ export default function AlbumsSearch({ albums }: { albums: AlbumProps[] }) {
   for (let album of albums) {
     albumElements.push(
       <Album
+        key={album.id}
         id={album.id}
         title={album.title}
         artist={album.artist}

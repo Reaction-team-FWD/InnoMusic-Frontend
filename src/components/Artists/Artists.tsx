@@ -12,7 +12,11 @@ export default function Artists({ artists }: { artists: Artist[] }) {
   let artistElements: React.ReactNode[] = [];
   for (let artist of artists) {
     artistElements.push(
-      <ArtistType imageSrc={artist.imageUrl} name={artist.name} />
+      <ArtistType
+        key={artist.name}
+        imageSrc={artist.imageUrl}
+        name={artist.name}
+      />
     );
   }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './main.module.scss';
 import './globals.scss';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'InnoMusic',
