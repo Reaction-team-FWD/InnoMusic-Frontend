@@ -1,11 +1,11 @@
-import classes from "./TopResult.module.scss";
-import { SquareResult } from "@/components/SquareResult";
-import { StaticImageData } from "next/image";
-import { SearchResultBlock } from "@/components/SearchResultBlock";
+import classes from './TopResult.module.scss';
+import { SquareResult } from '@/components/SquareResult';
+import { StaticImageData } from 'next/image';
+import { SearchResultBlock } from '@/components/SearchResultBlock';
 
 export default function TopResult({
   imageSrc,
-  imageAlt = "top result",
+  imageAlt = 'top result',
   name,
   type,
 }: {

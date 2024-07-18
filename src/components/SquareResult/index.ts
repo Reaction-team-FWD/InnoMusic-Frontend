@@ -1,1 +1,1 @@
-export { default as SquareResult } from "./SquareResult";
+export { default as SquareResult } from './SquareResult';

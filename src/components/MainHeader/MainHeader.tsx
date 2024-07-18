@@ -1,8 +1,8 @@
-import React from "react";
-import { SearchInput } from "@/components/SearchInput";
-import styles from "./MainHeader.module.scss";
-import Link from "next/link";
-import "@/app/globals.scss";
+import React from 'react';
+import { SearchInput } from '@/components/SearchInput';
+import styles from './MainHeader.module.scss';
+import Link from 'next/link';
+import '@/app/globals.scss';
 
 const Header = () => {
   return (
@@ -32,10 +32,10 @@ const Header = () => {
           </Link>
         </nav>
         <div className={styles.authorization}>
-          <Link href={"/signup"}>
+          <Link href={'/signup'}>
             <button className={styles.signup}>Sign up</button>
           </Link>
-          <Link href={"/login"}>
+          <Link href={'/login'}>
             <button className={styles.login}>Log in</button>
           </Link>
         </div>

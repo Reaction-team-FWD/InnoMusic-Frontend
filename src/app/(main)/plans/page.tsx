@@ -1,13 +1,13 @@
-import styles from "./plans.module.scss";
-import Image from "next/image";
-import GooglePayIcon from "/public/svg/gpay.svg";
-import AmexIcon from "/public/svg/amex.svg";
-import PayPalIcon from "/public/svg/paypal.svg";
-import VisaIcon from "/public/svg/visa.svg";
-import ApplePayIcon from "/public/svg/apay.svg";
-import MasterCardIcon from "/public/svg/mc.svg";
-import benefit from "/public/svg/benefit.svg";
-import "../../globals.scss";
+import styles from './plans.module.scss';
+import Image from 'next/image';
+import GooglePayIcon from '/public/svg/gpay.svg';
+import AmexIcon from '/public/svg/amex.svg';
+import PayPalIcon from '/public/svg/paypal.svg';
+import VisaIcon from '/public/svg/visa.svg';
+import ApplePayIcon from '/public/svg/apay.svg';
+import MasterCardIcon from '/public/svg/mc.svg';
+import benefit from '/public/svg/benefit.svg';
+import '../../globals.scss';
 
 export default function PlansPage() {
   return (
@@ -18,10 +18,20 @@ export default function PlansPage() {
           Listen without limits on your phone, speaker, and other devices.
         </div>
         <div className={styles.plansInformationIcons}>
-          <Image src={GooglePayIcon} width={29} height={20} alt="payment-type" />
+          <Image
+            src={GooglePayIcon}
+            width={29}
+            height={20}
+            alt="payment-type"
+          />
           <Image src={ApplePayIcon} width={29} height={20} alt="payment-type" />
           <Image src={VisaIcon} width={29} height={20} alt="payment-type" />
-          <Image src={MasterCardIcon} width={29} height={20} alt="payment-type" />
+          <Image
+            src={MasterCardIcon}
+            width={29}
+            height={20}
+            alt="payment-type"
+          />
           <Image src={AmexIcon} width={29} height={20} alt="payment-type" />
           <Image src={PayPalIcon} width={29} height={20} alt="payment-type" />
         </div>

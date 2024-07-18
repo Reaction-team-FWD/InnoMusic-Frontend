@@ -1,6 +1,6 @@
-import React from "react";
-import { Albums } from "@/components/Albums";
-import Head from "next/head";
+import React from 'react';
+import { Albums } from '@/components/Albums';
+import Head from 'next/head';
 
 const AlbumsPage: React.FC = () => {
   return (

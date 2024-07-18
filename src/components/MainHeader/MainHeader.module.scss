@@ -20,7 +20,9 @@
 .header_title {
   font-size: 30px;
   font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
   &:hover {
     transform: scale(1.05);
   }
@@ -50,7 +52,9 @@
   border: none;
   background-color: black;
   padding: 10px 30px;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 
   &:hover {
     outline: none;
@@ -81,7 +85,9 @@
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 
   &:hover {
     transform: scale(1.05);

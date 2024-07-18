@@ -1,1 +1,1 @@
-export { default as TopResult } from "./TopResult";
+export { default as TopResult } from './TopResult';

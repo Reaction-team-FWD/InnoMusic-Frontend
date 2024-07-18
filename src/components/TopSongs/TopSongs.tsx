@@ -1,7 +1,7 @@
-import classes from "./TopSongs.module.scss";
-import { Song, SongCardProps } from "@/components/Song";
-import React from "react";
-import { SearchResultBlock } from "@/components/SearchResultBlock";
+import classes from './TopSongs.module.scss';
+import { Song, SongCardProps } from '@/components/Song';
+import React from 'react';
+import { SearchResultBlock } from '@/components/SearchResultBlock';
 
 export default function TopSongs({ songs }: { songs: SongCardProps[] }) {
   let songsElements: React.ReactNode[] = [];

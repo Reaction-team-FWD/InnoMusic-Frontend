@@ -1,7 +1,7 @@
-import { Header } from "@/components/Header";
-import styles from "./main.module.scss";
-import Link from "next/link";
-import "./globals.scss";
+import { Header } from '@/components/Header';
+import styles from './main.module.scss';
+import Link from 'next/link';
+import './globals.scss';
 
 export default function MainPage() {
   return (
@@ -14,11 +14,13 @@ export default function MainPage() {
             It is almost free music streaming service. Check out our free plan!
           </div>
           <div className={styles.buttons}>
-            <Link href={"./home"}>
+            <Link href={'./home'}>
               <button className={styles.first_button}>GET STARTED</button>
             </Link>
             <button className={styles.second_button}>
-              <Link href={"./plans"} className={styles.buttonLink}>SEE OTHER PLANS</Link>
+              <Link href={'./plans'} className={styles.buttonLink}>
+                SEE OTHER PLANS
+              </Link>
             </button>
           </div>
           <div className={styles.extra_description}>

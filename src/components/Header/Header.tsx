@@ -1,6 +1,6 @@
-import { FC } from "react";
-import styles from "./Header.module.scss";
-import Link from "next/link";
+import { FC } from 'react';
+import styles from './Header.module.scss';
+import Link from 'next/link';
 
 const Header: FC = () => {
   return (
@@ -52,22 +52,22 @@ const Header: FC = () => {
       </div>
       <div className={styles.buttons}>
         {/* About page redirection will be here */}
-        <Link href={"./about"}>
+        <Link href={'./about'}>
           <button className={styles.button}>About us</button>
         </Link>
-        <Link href={"./plans"}>
+        <Link href={'./plans'}>
           <button className={styles.button}>Plans</button>
         </Link>
-        <Link href={"./"}>
+        <Link href={'./'}>
           <button className={styles.button}>Download</button>
         </Link>
-        <Link href={"./"} className={styles.stick}>
+        <Link href={'./'} className={styles.stick}>
           |
         </Link>
-        <Link href={"./signup"}>
+        <Link href={'./signup'}>
           <button className={styles.button}>Sign up</button>
         </Link>
-        <Link href={"./login"}>
+        <Link href={'./login'}>
           <button className={styles.button}>Log in</button>
         </Link>
       </div>

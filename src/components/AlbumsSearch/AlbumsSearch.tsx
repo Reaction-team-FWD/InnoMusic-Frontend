@@ -1,7 +1,7 @@
-import { SearchResultBlock } from "@/components/SearchResultBlock";
-import Album, { AlbumProps } from "../Album/Album";
-import React from "react";
-import classes from "./AlbumsSearch.module.scss";
+import { SearchResultBlock } from '@/components/SearchResultBlock';
+import Album, { AlbumProps } from '../Album/Album';
+import React from 'react';
+import classes from './AlbumsSearch.module.scss';
 
 export default function AlbumsSearch({ albums }: { albums: AlbumProps[] }) {
   let albumElements: React.ReactNode[] = [];

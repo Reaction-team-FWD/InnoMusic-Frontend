@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import axios from "axios";
-import styles from "./SignUp.module.scss";
-import "../../globals.scss";
+import { useState } from 'react';
+import axios from 'axios';
+import styles from './SignUp.module.scss';
+import '../../globals.scss';
 
 export default function SignUpPage() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setNotification] = useState("");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setNotification] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    setNotification("");
+    setNotification('');
 
     try {
       const response = await axios.post(
-        "http://84.235.249.242:8000/auth/register",
+        'http://84.235.249.242:8000/auth/register',
         {
           name: username,
           login: email,
@@ -27,14 +27,14 @@ export default function SignUpPage() {
         },
         {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         }
       );
 
-      setNotification("Registration successful!");
+      setNotification('Registration successful!');
     } catch (error) {
-      setNotification("Registration failed. Please try again.");
+      setNotification('Registration failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -90,7 +90,7 @@ export default function SignUpPage() {
             </div>
             {error && <p className={styles.error}>{error}</p>}
             <button type="submit" className={styles.button} disabled={loading}>
-              {loading ? "SIGNING UP..." : "SIGN UP"}
+              {loading ? 'SIGNING UP...' : 'SIGN UP'}
             </button>
           </form>
         </div>
