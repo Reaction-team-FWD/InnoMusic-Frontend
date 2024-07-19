@@ -1,13 +1,21 @@
-import { FC } from 'react';
+'use client';
+
+import { FC, useState } from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import '@/app/globals.scss';
 
 const Header: FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
-        <div className={styles.icon}>
+        <div className={styles.icon} onClick={toggleMenu}>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M4 10V13"

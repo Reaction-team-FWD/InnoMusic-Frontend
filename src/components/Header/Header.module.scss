@@ -8,6 +8,8 @@
   background-color: #0b090a;
   height: 80px;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .logoContainer {
@@ -101,4 +103,51 @@
 
 .button:hover::after {
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .buttons {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    margin-right: 3em;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 650px) {
+  .buttons {
+    display: none;
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }

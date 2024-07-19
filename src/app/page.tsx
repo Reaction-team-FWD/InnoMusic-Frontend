@@ -27,7 +27,17 @@ export default function MainPage() {
           </div>
         </div>
         <div className={styles.benefits}>
-          <div className={styles.title}>Contrary to popular belief</div>
+          <div className={styles.title}>
+            Sign up now and claim your free trial!
+          </div>
+          <div className={styles.signUpButtons}>
+            <Link href={'./signup'} className={styles.signup}>
+              SIGN UP
+            </Link>
+            <Link href={'./login'} className={styles.signupDesc}>
+              If you already have the account
+            </Link>
+          </div>
         </div>
         <div className={styles.subscriptions}>
           <div className={styles.title}>The first line of Lorem Ipsum</div>
