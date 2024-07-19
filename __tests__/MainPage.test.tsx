@@ -31,7 +31,9 @@ describe('MainPage', () => {
     expect(seeOtherPlansLink).toHaveAttribute('href', './plans');
 
     // Check for the title in the benefits section
-    const benefitsTitle = screen.getByText(/Contrary to popular belief/i);
+    const benefitsTitle = screen.getByText(
+      /Sign up now and claim your free trial!/i
+    );
     expect(benefitsTitle).toBeInTheDocument();
   });
 });
