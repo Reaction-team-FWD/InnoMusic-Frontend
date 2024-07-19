@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import axios from "axios";
-import styles from "./Login.module.scss";
-import "../../globals.scss";
+import React, { useState } from 'react';
+import axios from 'axios';
+import styles from './Login.module.scss';
+import '../../globals.scss';
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -32,6 +32,7 @@ export default function Login() {
       );
 
       const { access_token } = response.data;
+      localStorage.setItem("token", access_token);
       setNotification("You have logged in!");
     } catch (error) {
       setNotification("Invalid username or password");
