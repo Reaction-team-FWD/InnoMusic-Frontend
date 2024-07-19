@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Content.module.css';
 import Image from 'next/image';
-import albumCover from '@/../public/img/albumCover.png';
 
 const albums = [
   { id: '1', title: 'After Hours', artist: 'The Weeknd', year: 2020 },
@@ -40,7 +39,7 @@ const Content: React.FC<ContentProps> = ({ searchParams }) => {
         <div className={styles.container}>
           <div className={styles.albumCover}>
             <Image
-              src={albumCover}
+              src="/img/albumCover.png"
               alt="Album cover"
               layout="fill"
               objectFit="cover"

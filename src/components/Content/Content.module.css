@@ -3,6 +3,7 @@
   height: 95vh;
   padding: 20px;
   background-color: #000;
+  flex-direction: row;
 }
 
 .leftPart {
@@ -194,4 +195,76 @@
 
 .relatedLink:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .songPage {
+    flex-direction: column;
+    height: 130vh;
+    padding: 10px;
+  }
+
+  .leftPart {
+    max-width: none;
+    margin-right: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .albumCover {
+    width: 100%;
+    height: auto;
+  }
+
+  .albumInfo {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .albumTitle {
+    font-size: 32px;
+  }
+
+  .albumDetails {
+    font-size: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .listenButton,
+  .likeButton,
+  .downloadButton,
+  .moreButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .commentsTitle {
+    font-size: 24px;
+  }
+
+  .commentText {
+    font-size: 16px;
+  }
+
+  .related {
+    height: auto;
+    max-height: 100px;
+  }
+
+  .relatedTitle {
+    font-size: 24px;
+  }
+
+  .relatedItemTitle,
+  .relatedItemArtist {
+    font-size: 16px;
+  }
 }
