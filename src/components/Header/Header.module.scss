@@ -21,7 +21,6 @@
   text-decoration: none;
   &:hover {
     transform: scale(1.05);
-    text-decoration: none;
   }
 }
 
@@ -35,11 +34,10 @@
   background-position: -100% 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.4s ease;
+  // transition: all 0.4s ease;
 }
 
 .redirectionLink {
-  justify-content: center;
   text-decoration: none;
 }
 

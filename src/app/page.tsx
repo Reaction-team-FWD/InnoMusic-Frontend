@@ -14,14 +14,12 @@ export default function MainPage() {
             It is almost free music streaming service. Check out our free plan!
           </div>
           <div className={styles.buttons}>
-            <Link href={'./home'}>
+            <Link href={'./home'} className={styles.buttonLink}>
               <button className={styles.first_button}>GET STARTED</button>
             </Link>
-            <button className={styles.second_button}>
-              <Link href={'./plans'} className={styles.buttonLink}>
-                SEE OTHER PLANS
-              </Link>
-            </button>
+            <Link href={'./plans'} className={styles.buttonLink}>
+              <button className={styles.second_button}>SEE OTHER PLANS</button>
+            </Link>
           </div>
           <div className={styles.extra_description}>
             <u>Terms and conditions apply</u>, 1 month free only for Innopolis

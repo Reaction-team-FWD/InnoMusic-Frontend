@@ -51,23 +51,22 @@ const Header: FC = () => {
         </Link>
       </div>
       <div className={styles.buttons}>
-        {/* About page redirection will be here */}
-        <Link href={'./about'}>
+        <Link href={'./about'} className={styles.redirectionLink}>
           <button className={styles.button}>About us</button>
         </Link>
-        <Link href={'./plans'}>
+        <Link href={'./plans'} className={styles.redirectionLink}>
           <button className={styles.button}>Plans</button>
         </Link>
-        <Link href={'./'}>
+        <Link href={'./'} className={styles.redirectionLink}>
           <button className={styles.button}>Download</button>
         </Link>
         <Link href={'./'} className={styles.stick}>
           |
         </Link>
-        <Link href={'./signup'}>
+        <Link href={'./signup'} className={styles.redirectionLink}>
           <button className={styles.button}>Sign up</button>
         </Link>
-        <Link href={'./login'}>
+        <Link href={'./login'} className={styles.redirectionLink}>
           <button className={styles.button}>Log in</button>
         </Link>
       </div>
