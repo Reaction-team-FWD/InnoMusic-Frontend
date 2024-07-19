@@ -9,13 +9,20 @@ export default function SignUpPage() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setNotification] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    setNotification('');
+    setError('');
+
+    if (password !== repeatPassword) {
+      setError('Passwords do not match');
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -32,9 +39,9 @@ export default function SignUpPage() {
         }
       );
 
-      setNotification('Registration successful!');
+      setError('Registration successful!');
     } catch (error) {
-      setNotification('Registration failed. Please try again.');
+      setError('Registration failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -85,6 +92,20 @@ export default function SignUpPage() {
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className={styles.form_group}>
+              <label htmlFor="repeatPassword" className={styles.label}>
+                Repeat Password
+              </label>
+              <input
+                type="password"
+                id="repeatPassword"
+                className={styles.input}
+                placeholder="Repeat your password"
+                value={repeatPassword}
+                onChange={(e) => setRepeatPassword(e.target.value)}
                 required
               />
             </div>

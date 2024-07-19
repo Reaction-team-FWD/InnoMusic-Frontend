@@ -8,7 +8,7 @@ jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe('SignUpPage', () => {
-  it('renders the Sign Up form with all fields and handles submission successfully', async () => {
+  it('renders the Sign Up form with all fields', async () => {
     render(<SignUpPage />);
 
     // Check for the title
@@ -24,16 +24,27 @@ describe('SignUpPage', () => {
     expect(emailInput).toBeInTheDocument();
 
     // Check for password input
-    const passwordInput = screen.getByLabelText(/Password/i);
+    const passwordInput = screen.getByLabelText('Password', {
+      selector: 'input',
+    });
     expect(passwordInput).toBeInTheDocument();
+
+    // Check for repeat password input
+    const repeatPasswordInput = screen.getByLabelText('Repeat Password', {
+      selector: 'input',
+    });
+    expect(repeatPasswordInput).toBeInTheDocument();
 
     // Check for submit button
     const submitButton = screen.getByRole('button', { name: /Sign Up/i });
     expect(submitButton).toBeInTheDocument();
   });
 
-  it('handles submission failure', async () => {
+  it('handles successful submission', async () => {
     render(<SignUpPage />);
+
+    // Mock the successful response
+    mockedAxios.post.mockResolvedValueOnce({ data: {} });
 
     // Fill out the form
     fireEvent.change(screen.getByLabelText(/Username/i), {
@@ -42,17 +53,22 @@ describe('SignUpPage', () => {
     fireEvent.change(screen.getByLabelText(/Email address/i), {
       target: { value: 'testuser@example.com' },
     });
-    fireEvent.change(screen.getByLabelText(/Password/i), {
+    fireEvent.change(screen.getByLabelText('Password', { selector: 'input' }), {
       target: { value: 'password' },
     });
-
+    fireEvent.change(
+      screen.getByLabelText('Repeat Password', { selector: 'input' }),
+      {
+        target: { value: 'password' },
+      }
+    );
     // Submit the form
     fireEvent.click(screen.getByRole('button', { name: /Sign Up/i }));
 
     // Wait for the registration success
     await waitFor(() => {
-      const errorNotification = screen.getByText(/Registration successful!/i);
-      expect(errorNotification).toBeInTheDocument();
+      const successNotification = screen.getByText(/Registration successful!/i);
+      expect(successNotification).toBeInTheDocument();
     });
   });
 });
