@@ -19,11 +19,7 @@ const Song: React.FC<SongCardProps> = ({ id, title, artist, duration }) => {
     >
       <div className={styles.song}>
         <div className={styles.songDetails}>
-          <Image
-            className={styles.songCover}
-            src={albumCover}
-            alt={'cover'}
-          ></Image>
+          <Image className={styles.songCover} src={albumCover} alt={'cover'}></Image>
           <div className={styles.songTitleArtist}>
             <div className={styles.songTitle}>{title}</div>
             <div className={styles.songArtist}>{artist}</div>

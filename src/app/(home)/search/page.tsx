@@ -55,11 +55,7 @@ export default function SearchPage() {
     <div className={classes.searchBlock}>
       <div className={classes.topBlock}>
         <div style={{ flexGrow: 2 }}>
-          <TopResult
-            imageSrc={topResultImageExample}
-            name={'Oxxxymiron'}
-            type={'Artist'}
-          />
+          <TopResult imageSrc={topResultImageExample} name={'Oxxxymiron'} type={'Artist'} />
         </div>
         <div style={{ flexGrow: 3 }}>
           <TopSongs songs={songExamples} />

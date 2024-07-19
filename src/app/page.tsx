@@ -10,9 +10,7 @@ export default function MainPage() {
       <div className={styles.container}>
         <div className={styles.introduction}>
           <div className={styles.title}>Have you already tried InnoMusic?</div>
-          <div className={styles.description}>
-            It is almost free music streaming service. Check out our free plan!
-          </div>
+          <div className={styles.description}>It is almost free music streaming service. Check out our free plan!</div>
           <div className={styles.buttons}>
             <Link href={'./home'} className={styles.first_button}>
               GET STARTED
@@ -22,14 +20,11 @@ export default function MainPage() {
             </Link>
           </div>
           <div className={styles.extra_description}>
-            <u>Terms and conditions apply</u>, 1 month free only for Innopolis
-            University students
+            <u>Terms and conditions apply</u>, 1 month free only for Innopolis University students
           </div>
         </div>
         <div className={styles.benefits}>
-          <div className={styles.title}>
-            Sign up now and claim your free trial!
-          </div>
+          <div className={styles.title}>Sign up now and claim your free trial!</div>
           <div className={styles.signUpButtons}>
             <Link href={'./signup'} className={styles.signup}>
               SIGN UP

@@ -17,12 +17,7 @@ export default function TopResult({
   return (
     <div className={classes.mainBlock}>
       <SearchResultBlock title="Top result">
-        <SquareResult
-          imageSrc={imageSrc}
-          imageAlt={imageAlt}
-          name={name}
-          type={type}
-        />
+        <SquareResult imageSrc={imageSrc} imageAlt={imageAlt} name={name} type={type} />
       </SearchResultBlock>
     </div>
   );

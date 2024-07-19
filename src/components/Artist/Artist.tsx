@@ -13,13 +13,7 @@ export default function Artist({
   return (
     <div className={classes.artistDiv}>
       <div className={classes.imageWrapper}>
-        <Image
-          className={classes.image}
-          src={imageSrc}
-          alt={imageAlt ?? name}
-          width={100}
-          height={100}
-        />
+        <Image className={classes.image} src={imageSrc} alt={imageAlt ?? name} width={100} height={100} />
       </div>
       <p className={classes.name}>{name}</p>
       <p className={classes.type}>Artist</p>
