@@ -1,32 +1,25 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import axios from 'axios';
-import styles from './signup.module.scss';
-import '../../globals.scss';
+import { useState } from "react";
+import axios from "axios";
+import styles from "./SignUp.module.scss";
+import "../../globals.scss";
 
 export default function SignUpPage() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    setError('');
-
-    if (password !== repeatPassword) {
-      setError('Passwords do not match');
-      setLoading(false);
-      return;
-    }
+    setNotification("");
 
     try {
       const response = await axios.post(
-        'http://84.235.249.242:8000/auth/register',
+        "http://84.235.249.242:8000/auth/register",
         {
           name: username,
           login: email,
@@ -34,14 +27,14 @@ export default function SignUpPage() {
         },
         {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
       );
 
-      setError('Registration successful!');
+      setNotification("Registration successful!");
     } catch (error) {
-      setError('Registration failed. Please try again.');
+      setNotification("Registration failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -95,23 +88,9 @@ export default function SignUpPage() {
                 required
               />
             </div>
-            <div className={styles.form_group}>
-              <label htmlFor="repeatPassword" className={styles.label}>
-                Repeat Password
-              </label>
-              <input
-                type="password"
-                id="repeatPassword"
-                className={styles.input}
-                placeholder="Repeat your password"
-                value={repeatPassword}
-                onChange={(e) => setRepeatPassword(e.target.value)}
-                required
-              />
-            </div>
             {error && <p className={styles.error}>{error}</p>}
             <button type="submit" className={styles.button} disabled={loading}>
-              {loading ? 'SIGNING UP...' : 'SIGN UP'}
+              {loading ? "SIGNING UP..." : "SIGN UP"}
             </button>
           </form>
         </div>

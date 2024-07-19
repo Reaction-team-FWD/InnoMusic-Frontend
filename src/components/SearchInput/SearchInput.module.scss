@@ -2,7 +2,7 @@
   background-color: black;
 }
 
-.headerInput input[type='text'] {
+.headerInput input[type="text"] {
   padding: 7px;
   padding-left: 15px;
   border: solid white;
@@ -15,14 +15,13 @@
   color: black;
 }
 
-.headerInput input[type='text']:focus {
+.headerInput input[type="text"]:focus {
   outline: none;
   border-width: 2px;
 }
 
 .metadataField {
-  width: 500px;
-  margin: 15px;
+    width: 500px;
 }
 
 @media screen and (max-width: 1500px) {
@@ -32,17 +31,13 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .metadataField {
-    width: 200px;
-  }
+  .headerInput input[type="text"] {
+   width: 10px;
+ }
 }
-@media screen and (max-width: 1000px) {
-  .metadataField {
-    width: 80%;
-  }
-}
-.headerInput {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+
+@media screen and (max-width: 1085px) {
+ .headerInput input[type="text"] {
+   display: none;
+ }
 }

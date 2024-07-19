@@ -1,21 +1,12 @@
-'use client';
-
-import { FC, useState } from 'react';
-import styles from './Header.module.scss';
-import Link from 'next/link';
-import '@/app/globals.scss';
+import { FC } from "react";
+import styles from "./Header.module.scss";
+import Link from "next/link";
 
 const Header: FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
-        <div className={styles.icon} onClick={toggleMenu}>
+        <div className={styles.icon}>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M4 10V13"
@@ -55,28 +46,29 @@ const Header: FC = () => {
             />
           </svg>
         </div>
-        <Link href="./" className={styles.logo}>
-          InnoMusic
+        <Link href="./" className={styles.redirectionLink}>
+          <div className={styles.logo}>InnoMusic</div>
         </Link>
       </div>
       <div className={styles.buttons}>
-        <Link href={'./about'} className={styles.button}>
-          About us
+        {/* About page redirection will be here */}
+        <Link href={"./about"}>
+          <button className={styles.button}>About us</button>
         </Link>
-        <Link href={'./plans'} className={styles.button}>
-          Plans
+        <Link href={"./plans"}>
+          <button className={styles.button}>Plans</button>
         </Link>
-        <Link href={'./'} className={styles.button}>
-          Download
+        <Link href={"./"}>
+          <button className={styles.button}>Download</button>
         </Link>
-        <Link href={'./'} className={styles.stick}>
+        <Link href={"./"} className={styles.stick}>
           |
         </Link>
-        <Link href={'./signup'} className={styles.button}>
-          Sign up
+        <Link href={"./signup"}>
+          <button className={styles.button}>Sign up</button>
         </Link>
-        <Link href={'./login'} className={styles.button}>
-          Log in
+        <Link href={"./login"}>
+          <button className={styles.button}>Log in</button>
         </Link>
       </div>
     </div>

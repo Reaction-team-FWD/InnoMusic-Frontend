@@ -1,36 +1,34 @@
-import React from 'react';
-import styles from './Album.module.scss';
-import Link from 'next/link';
-import Image from 'next/image';
+// src/components/Album/Album.tsx
+import React from "react";
+import styles from "./Album.module.scss";
+import Link from "next/link";
+import Image from "next/image";
 import albumCover from '@/../public/img/albumCover.png';
-
-export interface AlbumProps {
-  id: string;
-  title: string;
-  artist: string;
-  year: number;
+interface AlbumProps {
+    id: string;
+    title: string;
+    artist: string;
+    year: number;
 }
 
-const Album: React.FC<AlbumProps> = ({ id, title, artist, year }) => {
-  return (
-    <div className={styles.album}>
-      <Link
-        href={`/home/${id}?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}&year=${encodeURIComponent(year)}`}
-      >
-        <Image
-          className={styles.albumCover}
-          src={albumCover}
-          alt="Album cover"
-        />
-        <div className={styles.cardInfo}>
-          <div className={styles.albumTitle}>{title}</div>
-          <div className={styles.artist}>
-            {artist} <span className={styles.albumYear}>{year}</span>
-          </div>
+export const Album: React.FC<AlbumProps> = ({ id, title, artist, year }) => {
+    return (
+        <div className={styles.album}>
+            <Link
+                href={`/home/${id}?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}&year=${encodeURIComponent(year)}`}
+            >
+                <Image
+                    className={styles.albumCover}
+                    src={albumCover}
+                    alt="Album cover"
+                />
+                <div className={styles.cardInfo}>
+                    <div className={styles.albumTitle}>{title}</div>
+                    <div className={styles.artist}>
+                        {artist} <span className={styles.albumYear}>{year}</span>
+                    </div>
+                </div>
+            </Link>
         </div>
-      </Link>
-    </div>
-  );
+    );
 };
-
-export default Album;

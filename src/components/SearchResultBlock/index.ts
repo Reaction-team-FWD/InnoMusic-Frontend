@@ -1,1 +1,1 @@
-export { default as SearchResultBlock } from './SearchResultBlock';
+export { default as SearchResultBlock } from "./SearchResultBlock";

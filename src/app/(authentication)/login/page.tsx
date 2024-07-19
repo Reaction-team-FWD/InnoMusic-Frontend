@@ -1,40 +1,40 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import axios from 'axios';
-import styles from './login.module.scss';
-import '../../globals.scss';
+import { useState } from "react";
+import axios from "axios";
+import styles from "./Login.module.scss";
+import "../../globals.scss";
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setNotification] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    setNotification('');
+    setNotification("");
 
     try {
       const response = await axios.post(
-        'http://84.235.249.242:8000/auth/login',
+        "http://84.235.249.242:8000/auth/login",
         new URLSearchParams({
           username,
           password,
         }),
         {
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            Accept: 'application/json',
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
           },
         }
       );
 
       const { access_token } = response.data;
-      setNotification('You have logged in!');
+      setNotification("You have logged in!");
     } catch (error) {
-      setNotification('Invalid username or password');
+      setNotification("Invalid username or password");
     } finally {
       setLoading(false);
     }
@@ -76,7 +76,7 @@ export default function Login() {
             </div>
             {error && <p className={styles.error}>{error}</p>}
             <button type="submit" className={styles.button} disabled={loading}>
-              {loading ? 'LOGGING IN...' : 'LOG IN'}
+              {loading ? "LOGGING IN..." : "LOG IN"}
             </button>
           </form>
         </div>

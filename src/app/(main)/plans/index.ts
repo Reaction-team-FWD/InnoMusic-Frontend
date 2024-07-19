@@ -1,1 +1,1 @@
-export { default as PlansPage } from './page';
+export { default as PlansPage } from "./page";

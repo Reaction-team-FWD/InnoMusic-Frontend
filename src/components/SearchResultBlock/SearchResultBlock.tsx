@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './SearchResultBlock.module.scss';
+import React from "react";
+import classes from "./SearchResultBlock.module.scss";
 
 export default function SearchResultBlock({
   children,

@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
@@ -17,6 +17,7 @@
   border-radius: 8px;
   margin-bottom: 120px;
 }
+
 
 .title {
   text-align: center;
@@ -69,9 +70,7 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition:
-    background-color 0.3s,
-    transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .button:hover {

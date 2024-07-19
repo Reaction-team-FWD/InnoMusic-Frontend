@@ -1,1 +1,1 @@
-export { default as SearchPage } from './page';
+export { default as SearchPage } from "./page";

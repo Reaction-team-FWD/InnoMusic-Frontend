@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import styles from './SearchInput.module.scss';
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import styles from "./SearchInput.module.scss";
 
 const SearchInput: React.FC = () => {
-  const [inputValue, setInputValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>("");
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +13,7 @@ const SearchInput: React.FC = () => {
   };
 
   async function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       await router.push(`/search?q=${inputValue}`); // TODO: Remove it to achieve SSR
     }
@@ -23,7 +23,7 @@ const SearchInput: React.FC = () => {
     <div className={styles.headerInput}>
       <input
         type="text"
-        placeholder="Enter the song or author..."
+        placeholder="Enter title of the song or author..."
         className={styles.metadataField}
         value={inputValue}
         onChange={handleChange}
