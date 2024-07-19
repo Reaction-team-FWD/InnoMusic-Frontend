@@ -1,8 +1,10 @@
+'use client';
 import React from 'react';
 import { SearchInput } from '@/components/SearchInput';
 import styles from './MainHeader.module.scss';
 import Link from 'next/link';
 import '@/app/globals.scss';
+import MobileHeader from '../MobileHeader/MobileHeader';
 
 const Header = () => {
   return (
@@ -15,9 +17,6 @@ const Header = () => {
         </h1>
         <nav className={styles.header_nav}>
           <SearchInput />
-          <Link href="/" className={styles.header_link}>
-            Home
-          </Link>
           <Link href="/search" className={styles.header_link}>
             Search
           </Link>
@@ -40,6 +39,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <MobileHeader />
     </div>
   );
 };

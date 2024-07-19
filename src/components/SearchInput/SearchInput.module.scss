@@ -22,6 +22,7 @@
 
 .metadataField {
   width: 500px;
+  margin: 15px;
 }
 
 @media screen and (max-width: 1500px) {
@@ -31,13 +32,17 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .headerInput input[type='text'] {
-    width: 10px;
+  .metadataField {
+    width: 200px;
   }
 }
-
-@media screen and (max-width: 1085px) {
-  .headerInput input[type='text'] {
-    display: none;
+@media screen and (max-width: 1000px) {
+  .metadataField {
+    width: 80%;
   }
+}
+.headerInput {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -23,7 +23,7 @@ const SearchInput: React.FC = () => {
     <div className={styles.headerInput}>
       <input
         type="text"
-        placeholder="Enter title of the song or author..."
+        placeholder="Enter the song or author..."
         className={styles.metadataField}
         value={inputValue}
         onChange={handleChange}
