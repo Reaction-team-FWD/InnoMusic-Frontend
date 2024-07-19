@@ -1,6 +1,6 @@
-import { FC } from "react";
-import styles from "./AuthHeader.module.scss";
-import Link from "next/link";
+import { FC } from 'react';
+import styles from './AuthHeader.module.scss';
+import Link from 'next/link';
 
 const AuthHeader: FC = () => {
   return (
@@ -46,7 +46,8 @@ const AuthHeader: FC = () => {
         </svg>
       </div>
       <Link href="./" className={styles.linkLogo}>
-      <div className={styles.logo}>InnoMusic</div></Link>
+        <div className={styles.logo}>InnoMusic</div>
+      </Link>
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import { Header } from "@/components/Header";
-import styles from "./main.module.scss";
-import Link from "next/link";
-import "./globals.scss";
+import { Header } from '@/components/Header';
+import styles from './main.module.scss';
+import Link from 'next/link';
+import './globals.scss';
 
 export default function MainPage() {
   return (
@@ -14,12 +14,12 @@ export default function MainPage() {
             It is almost free music streaming service. Check out our free plan!
           </div>
           <div className={styles.buttons}>
-            <Link href={"./home"}>
-              <button className={styles.first_button}>GET STARTED</button>
+            <Link href={'./home'} className={styles.first_button}>
+              GET STARTED
             </Link>
-            <button className={styles.second_button}>
-              <Link href={"./plans"} className={styles.buttonLink}>SEE OTHER PLANS</Link>
-            </button>
+            <Link href={'./plans'} className={styles.second_button}>
+              SEE OTHER PLANS
+            </Link>
           </div>
           <div className={styles.extra_description}>
             <u>Terms and conditions apply</u>, 1 month free only for Innopolis
@@ -27,7 +27,17 @@ export default function MainPage() {
           </div>
         </div>
         <div className={styles.benefits}>
-          <div className={styles.title}>Contrary to popular belief</div>
+          <div className={styles.title}>
+            Sign up now and claim your free trial!
+          </div>
+          <div className={styles.signUpButtons}>
+            <Link href={'./signup'} className={styles.signup}>
+              SIGN UP
+            </Link>
+            <Link href={'./login'} className={styles.signupDesc}>
+              If you already have the account
+            </Link>
+          </div>
         </div>
         <div className={styles.subscriptions}>
           <div className={styles.title}>The first line of Lorem Ipsum</div>

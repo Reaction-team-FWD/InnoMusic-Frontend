@@ -3,23 +3,26 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   justify-content: flex-start;
   background-color: #0b090a;
   height: 80px;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .logoContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
   cursor: pointer;
   text-decoration: none;
   &:hover {
     transform: scale(1.05);
-    text-decoration: none;
   }
 }
 
@@ -37,7 +40,6 @@
 }
 
 .redirectionLink {
-  justify-content: center;
   text-decoration: none;
 }
 
@@ -59,12 +61,14 @@
 }
 
 .button {
+  font-family: inherit;
   background: none;
   border: none;
   color: #fff7fc;
   font-size: 16px;
-  font-weight: 50;
+  font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -87,7 +91,7 @@
 }
 
 .button::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0%;
   height: 2px;
@@ -99,4 +103,51 @@
 
 .button:hover::after {
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .buttons {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    margin-right: 3em;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 650px) {
+  .buttons {
+    display: none;
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }

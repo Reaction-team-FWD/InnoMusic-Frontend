@@ -6,6 +6,11 @@
   transition: transform 0.3s ease;
   background-color: black;
 }
+@media screen and (max-media: 1000px) {
+  .album {
+    margin: 20px;
+  }
+}
 
 .album * {
   background-color: transparent;

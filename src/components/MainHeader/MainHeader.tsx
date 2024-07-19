@@ -1,8 +1,10 @@
-import React from "react";
-import { SearchInput } from "@/components/SearchInput";
-import styles from "./MainHeader.module.scss";
-import Link from "next/link";
-import "@/app/globals.scss";
+'use client';
+import React from 'react';
+import { SearchInput } from '@/components/SearchInput';
+import styles from './MainHeader.module.scss';
+import Link from 'next/link';
+import '@/app/globals.scss';
+import MobileHeader from '../MobileHeader/MobileHeader';
 
 const Header = () => {
   return (
@@ -15,31 +17,29 @@ const Header = () => {
         </h1>
         <nav className={styles.header_nav}>
           <SearchInput />
-          <Link href="/" className={styles.header_link}>
-            Home
-          </Link>
           <Link href="/search" className={styles.header_link}>
             Search
           </Link>
-          <Link href="/" className={styles.header_link}>
+          <Link href="/home" className={styles.header_link}>
             My music
           </Link>
           <Link href="/likedsongs" className={styles.header_link}>
             Liked songs
           </Link>
-          <Link href="/about" className={styles.header_link}>
+          <Link href="/" className={styles.header_link}>
             About
           </Link>
         </nav>
         <div className={styles.authorization}>
-          <Link href={"/signup"}>
+          <Link href={'/signup'}>
             <button className={styles.signup}>Sign up</button>
           </Link>
-          <Link href={"/login"}>
+          <Link href={'/login'}>
             <button className={styles.login}>Log in</button>
           </Link>
         </div>
       </div>
+      <MobileHeader />
     </div>
   );
 };

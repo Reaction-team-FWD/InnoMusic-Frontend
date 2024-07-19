@@ -11,7 +11,6 @@
     outline: none;
     background-color: rgba(98, 98, 112, 0.986);
   }
-
 }
 
 .songArtist {
@@ -44,6 +43,11 @@
   margin-bottom: 5px;
   background-color: transparent;
 }
+.songLink:hover {
+  .songArtist {
+    color: black;
+  }
+}
 
 .songTitleArtist {
   background-color: transparent;
@@ -51,4 +55,23 @@
 
 .songDuration {
   background-color: transparent;
+}
+
+.songLink,
+.song,
+.songDetails,
+.songCover,
+.songTitleArtist,
+.songTitle,
+.songArtist,
+.songDuration {
+  text-decoration: none;
+}
+.songLink:hover {
+  text-decoration: none;
+}
+
+.songLink:active,
+.songLink:visited {
+  text-decoration: none;
 }

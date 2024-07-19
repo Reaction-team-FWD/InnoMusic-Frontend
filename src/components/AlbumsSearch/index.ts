@@ -1,1 +1,1 @@
-export { default as AlbumsSearch } from "./AlbumsSearch";
+export { default as AlbumsSearch } from './AlbumsSearch';

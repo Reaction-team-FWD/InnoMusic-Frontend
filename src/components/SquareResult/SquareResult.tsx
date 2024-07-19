@@ -1,5 +1,5 @@
-import classes from "./SquareResult.module.scss";
-import Image, { StaticImageData } from "next/image";
+import classes from './SquareResult.module.scss';
+import Image, { StaticImageData } from 'next/image';
 
 export default function SquareResult({
   imageSrc,
