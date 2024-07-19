@@ -7,13 +7,7 @@ export default function AlbumsSearch({ albums }: { albums: AlbumProps[] }) {
   let albumElements: React.ReactNode[] = [];
   for (let album of albums) {
     albumElements.push(
-      <Album
-        key={album.id}
-        id={album.id}
-        title={album.title}
-        artist={album.artist}
-        year={album.year}
-      />
+      <Album key={album.id} id={album.id} title={album.title} artist={album.artist} year={album.year} />
     );
   }
 

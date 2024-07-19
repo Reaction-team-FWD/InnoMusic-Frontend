@@ -22,9 +22,8 @@ export default function AboutPage() {
         <section>
           <h2>Our Mission</h2>
           <p>
-            Our mission is to unlock the potential of human creativity—by giving
-            a million creative artists the opportunity to live off their art and
-            billions of fans the opportunity to enjoy and be inspired by it.
+            Our mission is to unlock the potential of human creativity—by giving a million creative artists the
+            opportunity to live off their art and billions of fans the opportunity to enjoy and be inspired by it.
           </p>
         </section>
 
@@ -32,53 +31,23 @@ export default function AboutPage() {
           <h2>Our Team</h2>
           <div className="team-member">
             <h3>Oleg Shchendrigin</h3>
-            <Image
-              src={Oleg}
-              width={500}
-              height={500}
-              alt="Oleg Shchendrigin"
-              className="team-photo"
-            />
+            <Image src={Oleg} width={500} height={500} alt="Oleg Shchendrigin" className="team-photo" />
           </div>
           <div className="team-member">
             <h3>Maxim Fomin</h3>
-            <Image
-              src={Max}
-              width={500}
-              height={500}
-              alt="Maxim Fomin"
-              className="team-photo"
-            />
+            <Image src={Max} width={500} height={500} alt="Maxim Fomin" className="team-photo" />
           </div>
           <div className="team-member">
             <h3>Egor Chernobrovkin</h3>
-            <Image
-              src={Egor}
-              width={500}
-              height={500}
-              alt="Egor Chernobrovkin"
-              className="team-photo"
-            />
+            <Image src={Egor} width={500} height={500} alt="Egor Chernobrovkin" className="team-photo" />
           </div>
           <div className="team-member">
             <h3>Adilia Saifetdiarova</h3>
-            <Image
-              src={DiDi}
-              width={500}
-              height={500}
-              alt="Adilia Saifetdiarova"
-              className="team-photo"
-            />
+            <Image src={DiDi} width={500} height={500} alt="Adilia Saifetdiarova" className="team-photo" />
           </div>
           <div className="team-member">
             <h3>Timur Farizunov</h3>
-            <Image
-              src={Tim}
-              width={500}
-              height={500}
-              alt="Timur Farizunov"
-              className="team-photo"
-            />
+            <Image src={Tim} width={500} height={500} alt="Timur Farizunov" className="team-photo" />
           </div>
         </section>
 
@@ -86,27 +55,19 @@ export default function AboutPage() {
           <h2>Contact Us</h2>
           <ul className="contact-list">
             <li>
-              <a href="mailto:o.shchendrigin@innopolis.university">
-                o.shchendrigin@innopolis.university
-              </a>
+              <a href="mailto:o.shchendrigin@innopolis.university">o.shchendrigin@innopolis.university</a>
             </li>
             <li>
-              <a href="mailto:m.fomin@innopolis.university">
-                m.fomin@innopolis.university
-              </a>
+              <a href="mailto:m.fomin@innopolis.university">m.fomin@innopolis.university</a>
             </li>
             <li>
-              <a href="mailto:e.chernobrovkin@innopolis.university">
-                e.chernobrovkin@innopolis.university
-              </a>
+              <a href="mailto:e.chernobrovkin@innopolis.university">e.chernobrovkin@innopolis.university</a>
             </li>
             <li>
               <a href="mailto:sayfetik2005@gmail.com">sayfetik2005@gmail.com</a>
             </li>
             <li>
-              <a href="mailto:t.farizunov@innopolis.university">
-                t.farizunov@innopolis.university
-              </a>
+              <a href="mailto:t.farizunov@innopolis.university">t.farizunov@innopolis.university</a>
             </li>
           </ul>
         </section>

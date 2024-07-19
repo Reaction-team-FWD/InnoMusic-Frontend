@@ -10,26 +10,24 @@ interface SongData {
   duration: string;
 }
 
-export const getServerSideProps = (async () =>{
+export const getServerSideProps = async () => {
   let initialSongs: SongData[] = [];
   try {
-    const response = await fetch("https://b7ff-188-130-155-162.ngrok-free.app/song/all");
+    const response = await fetch('https://b7ff-188-130-155-162.ngrok-free.app/song/all');
     initialSongs = await response.json();
   } catch (error) {
     console.error('Failed to fetch songs:', error);
   }
 
   return initialSongs;
-  
-}) 
+};
 
 export async function Songs() {
   const initialSongs = await getServerSideProps();
-  return(
-      <>
-        <SongsView initialSongs={initialSongs} />
-      </>
-  )
-  
+  return (
+    <>
+      <SongsView initialSongs={initialSongs} />
+    </>
+  );
 }
 export default Songs;

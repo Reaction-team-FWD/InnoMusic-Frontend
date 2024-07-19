@@ -17,11 +17,7 @@ const Album: React.FC<AlbumProps> = ({ id, title, artist, year }) => {
       <Link
         href={`/home/${id}?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}&year=${encodeURIComponent(year)}`}
       >
-        <Image
-          className={styles.albumCover}
-          src={albumCover}
-          alt="Album cover"
-        />
+        <Image className={styles.albumCover} src={albumCover} alt="Album cover" />
         <div className={styles.cardInfo}>
           <div className={styles.albumTitle}>{title}</div>
           <div className={styles.artist}>

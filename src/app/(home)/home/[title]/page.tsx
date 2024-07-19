@@ -17,19 +17,10 @@ const SongPage: React.FC = () => {
         <title>
           {title} - {artist}
         </title>
-        <meta
-          name="description"
-          content={`Listen to ${title} by ${artist}, released in ${year}.`}
-        />
-        <meta
-          name="keywords"
-          content={`music, ${artist}, ${title}, ${year}, album`}
-        />
+        <meta name="description" content={`Listen to ${title} by ${artist}, released in ${year}.`} />
+        <meta name="keywords" content={`music, ${artist}, ${title}, ${year}, album`} />
         <meta property="og:title" content={`${title} - ${artist}`} />
-        <meta
-          property="og:description"
-          content={`Listen to ${title} by ${artist}, released in ${year}.`}
-        />
+        <meta property="og:description" content={`Listen to ${title} by ${artist}, released in ${year}.`} />
         <meta property="og:image" content="/img/albumCover.png" />
         <meta property="og:type" content="music.song" />
         <meta name="robots" content="index, follow" />

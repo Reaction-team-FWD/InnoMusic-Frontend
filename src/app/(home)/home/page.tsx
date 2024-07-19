@@ -11,10 +11,7 @@ const AlbumsPage: React.FC = () => {
           name="description"
           content="Explore my extensive collection of music albums. Click on any track to view detailed information and listen to the song."
         />
-        <meta
-          name="keywords"
-          content="music, albums, tracks, collection, listen"
-        />
+        <meta name="keywords" content="music, albums, tracks, collection, listen" />
         <meta property="og:title" content="My Music Collection" />
         <meta
           property="og:description"

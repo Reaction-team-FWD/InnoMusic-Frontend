@@ -11,13 +11,7 @@ export interface Artist {
 export default function Artists({ artists }: { artists: Artist[] }) {
   let artistElements: React.ReactNode[] = [];
   for (let artist of artists) {
-    artistElements.push(
-      <ArtistType
-        key={artist.name}
-        imageSrc={artist.imageUrl}
-        name={artist.name}
-      />
-    );
+    artistElements.push(<ArtistType key={artist.name} imageSrc={artist.imageUrl} name={artist.name} />);
   }
 
   return (

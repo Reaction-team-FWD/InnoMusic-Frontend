@@ -7,13 +7,7 @@ export default function TopSongs({ songs }: { songs: SongCardProps[] }) {
   let songsElements: React.ReactNode[] = [];
   for (let song of songs) {
     songsElements.push(
-      <Song
-        id="1"
-        key={song.title}
-        title={song.title}
-        artist={song.artist}
-        duration={song.duration}
-      />
+      <Song id="1" key={song.title} title={song.title} artist={song.artist} duration={song.duration} />
     );
   }
 

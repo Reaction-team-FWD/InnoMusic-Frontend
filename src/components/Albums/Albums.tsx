@@ -30,13 +30,7 @@ const Albums = () => {
     <div className={styles.albums}>
       <div className={styles.cards}>
         {albums.map((album) => (
-          <Album
-            key={album.id}
-            id={album.id}
-            title={album.title}
-            artist={album.artist}
-            year={album.year}
-          />
+          <Album key={album.id} id={album.id} title={album.title} artist={album.artist} year={album.year} />
         ))}
       </div>
       <Songs />
