@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
+import '@/app/globals.scss';
 
 const Header: FC = () => {
   return (
@@ -46,29 +47,28 @@ const Header: FC = () => {
             />
           </svg>
         </div>
-        <Link href="./" className={styles.redirectionLink}>
-          <div className={styles.logo}>InnoMusic</div>
+        <Link href="./" className={styles.logo}>
+          InnoMusic
         </Link>
       </div>
       <div className={styles.buttons}>
-        {/* About page redirection will be here */}
-        <Link href={'./about'}>
-          <button className={styles.button}>About us</button>
+        <Link href={'./about'} className={styles.button}>
+          About us
         </Link>
-        <Link href={'./plans'}>
-          <button className={styles.button}>Plans</button>
+        <Link href={'./plans'} className={styles.button}>
+          Plans
         </Link>
-        <Link href={'./'}>
-          <button className={styles.button}>Download</button>
+        <Link href={'./'} className={styles.button}>
+          Download
         </Link>
         <Link href={'./'} className={styles.stick}>
           |
         </Link>
-        <Link href={'./signup'}>
-          <button className={styles.button}>Sign up</button>
+        <Link href={'./signup'} className={styles.button}>
+          Sign up
         </Link>
-        <Link href={'./login'}>
-          <button className={styles.button}>Log in</button>
+        <Link href={'./login'} className={styles.button}>
+          Log in
         </Link>
       </div>
     </div>
