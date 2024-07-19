@@ -1,0 +1,48 @@
+.headerInput * {
+  background-color: black;
+}
+
+.headerInput input[type='text'] {
+  padding: 7px;
+  padding-left: 15px;
+  border: solid white;
+  border-width: 1px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.headerInput input[type='text']:focus {
+  outline: none;
+  border-width: 2px;
+}
+
+.metadataField {
+  width: 500px;
+  margin: 15px;
+}
+
+@media screen and (max-width: 1500px) {
+  .metadataField {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .metadataField {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .metadataField {
+    width: 80%;
+  }
+}
+.headerInput {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

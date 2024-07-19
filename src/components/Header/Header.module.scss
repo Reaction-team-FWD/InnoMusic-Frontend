@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  justify-content: flex-start;
+  background-color: #0b090a;
+  height: 80px;
+  width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff7fc;
+  position: relative;
+  background: linear-gradient(to left, #fff7fc 50%, #1ed760 50%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
+}
+
+.redirectionLink {
+  text-decoration: none;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  padding-left: 10px;
+  fill: none;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 8em;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: #fff7fc;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.stick {
+  background: none;
+  border: none;
+  color: #fff7fc;
+  font-size: 20px;
+  font-weight: 50;
+  cursor: default;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.button:hover {
+  color: #1ed760;
+  transform: scale(1.05);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #1ed760;
+  transition: width 0.3s ease;
+}
+
+.button:hover::after {
+  width: 100%;
+}

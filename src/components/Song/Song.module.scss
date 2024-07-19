@@ -1,0 +1,77 @@
+.song {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  &:hover {
+    outline: none;
+    background-color: rgba(98, 98, 112, 0.986);
+  }
+}
+
+.songArtist {
+  color: white;
+}
+
+.songCover {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.songDetails {
+  display: flex;
+  flex: 1;
+  background-color: transparent;
+}
+
+.songTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  background-color: transparent;
+}
+
+.songArtist {
+  font-size: 15px;
+  color: rgb(128, 114, 183);
+  margin-bottom: 5px;
+  background-color: transparent;
+}
+.songLink:hover {
+  .songArtist {
+    color: black;
+  }
+}
+
+.songTitleArtist {
+  background-color: transparent;
+}
+
+.songDuration {
+  background-color: transparent;
+}
+
+.songLink,
+.song,
+.songDetails,
+.songCover,
+.songTitleArtist,
+.songTitle,
+.songArtist,
+.songDuration {
+  text-decoration: none;
+}
+.songLink:hover {
+  text-decoration: none;
+}
+
+.songLink:active,
+.songLink:visited {
+  text-decoration: none;
+}
