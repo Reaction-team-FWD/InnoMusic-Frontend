@@ -14,11 +14,11 @@ export default function MainPage() {
             It is almost free music streaming service. Check out our free plan!
           </div>
           <div className={styles.buttons}>
-            <Link href={'./home'} className={styles.buttonLink}>
-              <button className={styles.first_button}>GET STARTED</button>
+            <Link href={'./home'} className={styles.first_button}>
+              GET STARTED
             </Link>
-            <Link href={'./plans'} className={styles.buttonLink}>
-              <button className={styles.second_button}>SEE OTHER PLANS</button>
+            <Link href={'./plans'} className={styles.second_button}>
+              SEE OTHER PLANS
             </Link>
           </div>
           <div className={styles.extra_description}>
