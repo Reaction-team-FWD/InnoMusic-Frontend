@@ -11,10 +11,7 @@ const SongsPage: React.FC = () => {
           name="description"
           content="View and manage your favorite songs. Discover and listen to all the music you love in one place."
         />
-        <meta
-          name="keywords"
-          content="liked songs, favorite music, music playlist, favorite tracks"
-        />
+        <meta name="keywords" content="liked songs, favorite music, music playlist, favorite tracks" />
         <meta property="og:title" content="Liked Songs - Your Favorite Music" />
         <meta
           property="og:description"

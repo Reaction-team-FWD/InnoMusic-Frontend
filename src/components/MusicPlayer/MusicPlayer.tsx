@@ -73,21 +73,11 @@ const MusicPlayer: React.FC<ContentProps> = ({ searchParams }) => {
         </div>
         <div className={styles.icon} onClick={toggleFavorite}>
           {isFavorite ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              fill="currentColor"
-              viewBox="0 0 512 512"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512">
               <path d="M 244 129.5 L 232 115.5 L 244 129.5 L 232 115.5 L 228 110.5 L 228 110.5 Q 208 88.5 181 79.5 Q 153 70.5 124 75.5 Q 83 83.5 58 113.5 Q 33 143.5 32 185.5 L 32 188.5 L 32 188.5 Q 33 239.5 69 274.5 L 253 445.5 L 253 445.5 Q 254 446.5 256 446.5 Q 258 446.5 259 445.5 L 443 274.5 L 443 274.5 Q 479 239.5 480 188.5 L 480 185.5 L 480 185.5 Q 479 143.5 454 113.5 Q 429 83.5 388 75.5 Q 359 70.5 331 79.5 Q 304 88.5 284 110.5 L 280 115.5 L 280 115.5 L 268 129.5 L 268 129.5 Q 263 134.5 256 134.5 Q 249 134.5 244 129.5 L 244 129.5 Z M 279 72.5 Q 330 33.5 394 43.5 Q 446 54.5 479 93.5 Q 511 132.5 512 185.5 L 512 188.5 L 512 188.5 Q 511 244.5 475 286.5 Q 470 292.5 465 297.5 L 281 468.5 L 281 468.5 Q 279 469.5 278 470.5 Q 278 470.5 278 470.5 Q 268 478.5 256 478.5 Q 242 478.5 231 468.5 L 47 297.5 L 47 297.5 Q 42 292.5 37 286.5 Q 1 244.5 0 188.5 L 0 185.5 L 0 185.5 Q 1 132.5 33 93.5 Q 66 54.5 118 43.5 Q 182 33.5 233 72.5 Q 243 79.5 252 89.5 L 256 94.5 L 256 94.5 L 260 89.5 L 260 89.5 Q 266 82.5 273 76.5 Q 275 75.5 276 74.5 Q 277 73.5 279 72.5 L 279 72.5 Z" />
             </svg>
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              fill="currentColor"
-              viewBox="0 0 512 512"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512">
               <path d="M 48 296.5 L 228 465.5 L 48 296.5 L 228 465.5 Q 240 476.5 256 476.5 Q 272 476.5 284 465.5 L 464 296.5 L 464 296.5 Q 511 252.5 512 187.5 L 512 181.5 L 512 181.5 Q 511 127.5 478 89.5 Q 445 50.5 393 40.5 Q 358 35.5 325 45.5 Q 293 55.5 268 80.5 L 256 92.5 L 256 92.5 L 244 80.5 L 244 80.5 Q 219 55.5 187 45.5 Q 154 35.5 119 40.5 Q 67 50.5 34 89.5 Q 1 127.5 0 181.5 L 0 187.5 L 0 187.5 Q 1 252.5 48 296.5 L 48 296.5 Z" />
             </svg>
           )}
@@ -133,30 +123,12 @@ const MusicPlayer: React.FC<ContentProps> = ({ searchParams }) => {
             </div>
             <div className={styles.icon} onClick={togglePlayPause}>
               {isPlaying ? (
-                <svg
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.20312H14V15.2031H12V1.20312ZM2 1.20312H4V15.2031H2V1.20312Z"
-                    fill="white"
-                  />
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1.20312H14V15.2031H12V1.20312ZM2 1.20312H4V15.2031H2V1.20312Z" fill="white" />
                 </svg>
               ) : (
-                <svg
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 1.20312L14 8.20312L2 15.2031V1.20312Z"
-                    fill="white"
-                  />
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 1.20312L14 8.20312L2 15.2031V1.20312Z" fill="white" />
                 </svg>
               )}
             </div>
