@@ -15,7 +15,7 @@ const SearchInput: React.FC = () => {
   async function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') {
       e.preventDefault();
-      await router.push(`/search?q=${inputValue}`); // TODO: Remove it to achieve SSR
+      router.push(`/search?q=${inputValue}`);
     }
   }
 

@@ -6,6 +6,7 @@ import { AlbumsSearch } from '@/components/AlbumsSearch';
 import { AlbumProps } from '@/components/Album';
 import classes from './search.module.scss';
 import { SongModel } from '@/entities/song/model';
+import searchService from '@/entities/search/api';
 
 const topResultImageExample =
   'https://p-u.popcdn.net/event_details/posters/' +
@@ -19,6 +20,7 @@ const songExamples: SongModel[] = [
   { id: 2, name: 'ОЙДА', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
   { id: 3, name: 'Я хейтер', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
 ];
+
 const artistExamples: Artist[] = [
   { name: 'Oxxxymiron', imageUrl: topResultImageExample },
   {
@@ -32,6 +34,7 @@ const artistExamples: Artist[] = [
       'https://yt3.googleusercontent.com/ytc/AIdro_nXOHr0UObrALBeJ5o-UoQJy14Z72QS5ZVCe1ZTbpCekQ4=s900-c-k-c0x00ffffff-no-rj',
   },
 ];
+
 const albums: AlbumProps[] = [
   { id: '1', title: 'After Hours', artist: 'The Weeknd', year: 2020 },
   { id: '2', title: 'Fine Line', artist: 'Harry Styles', year: 2019 },
@@ -54,15 +57,29 @@ const albums: AlbumProps[] = [
   { id: '9', title: 'High Off Life', artist: 'Future', year: 2020 },
 ];
 
-export default function SearchPage() {
+interface Props {
+  searchParams: {
+    q: string;
+  };
+}
+
+export default async function SearchPage({ searchParams }: Props) {
+  const result = await searchService.searchEverywhere(searchParams.q);
+  const top = result.top.value;
+  result.songs.forEach((s) => (s.cover = s.cover ?? songExamples[0].cover));
+
   return (
     <div className={classes.searchBlock}>
       <div className={classes.topBlock}>
         <div style={{ flexGrow: 2 }}>
-          <TopResult imageSrc={topResultImageExample} name={'Oxxxymiron'} type={'Artist'} />
+          {result.top.type === 'user' ? (
+            <TopResult imageSrc={topResultImageExample} name={top.name} type={'Artist'} />
+          ) : (
+            <TopResult imageSrc={(top as SongModel).cover ?? songExamples[0].cover} name={top.name} type={'Song'} />
+          )}
         </div>
         <div style={{ flexGrow: 3 }}>
-          <TopSongs songs={songExamples} />
+          <TopSongs songs={result.songs.slice(0, 3)} />
         </div>
       </div>
       <Artists artists={artistExamples} />
