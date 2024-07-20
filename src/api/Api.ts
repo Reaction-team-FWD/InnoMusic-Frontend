@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://f4bd-188-130-155-159.ngrok-free.app';
 
 class Api {
   public async fetch(path: string, params?: RequestInit) {
