@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import axios from 'axios';
 import styles from './login.module.scss';
 import '../../globals.scss';
+import authService from '@/entities/auth/api';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -17,21 +17,10 @@ export default function Login() {
     setNotification('');
 
     try {
-      const response = await axios.post(
-        'http://84.235.249.242:8000/auth/login',
-        new URLSearchParams({
-          username,
-          password,
-        }),
-        {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            Accept: 'application/json',
-          },
-        }
-      );
+      const response = await authService.login({ username, password });
 
-      const { access_token } = response.data;
+      const { access_token } = response;
+      localStorage.setItem('token', access_token);
       setNotification('You have logged in!');
     } catch (error) {
       setNotification('Invalid username or password');
