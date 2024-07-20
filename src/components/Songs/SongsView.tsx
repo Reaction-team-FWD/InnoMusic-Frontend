@@ -87,24 +87,24 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
   // Убедитесь, что начальное состояние является массивом
 
   const [title, setTitle] = useState<string>('');
-  const [artist, setArtist] = useState<string>('');
-  const [duration, setDuration] = useState<string>('');
+  const [cover, setCover] = useState<string>('');
+  const [file, setFile] = useState<string>('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (title.trim() && artist.trim() && duration.trim()) {
+    if (title.trim()) {
       const newSong: CreateSongModel = {
         name: title,
         extra_authors: [],
-        cover: defaultCover,
-        file: defaultSong,
+        cover: cover || defaultCover,
+        file: file || defaultSong,
       };
       const song = await songService.create(newSong, getTokenOrAlert());
       const newSongs = [...songs, song];
       setSongs(newSongs);
       setTitle('');
-      setArtist('');
-      setDuration('');
+      setCover('');
+      setFile('');
     }
   };
 
@@ -120,16 +120,18 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
         />
         <input
           type="text"
-          value={artist}
-          onChange={(e) => setArtist(e.target.value)}
-          placeholder="Enter artist"
+          value={cover}
+          onChange={(e) => setCover(e.target.value)}
+          placeholder="Enter cover link"
+          required={false}
           className={styles.input}
         />
         <input
           type="text"
-          value={duration}
-          onChange={(e) => setDuration(e.target.value)}
-          placeholder="Enter duration"
+          value={file}
+          onChange={(e) => setFile(e.target.value)}
+          placeholder="Enter file link"
+          required={false}
           className={styles.input}
         />
         <button type="submit" className={styles.submitButton}>
