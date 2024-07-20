@@ -1,7 +1,9 @@
+import UserModel from '@/entities/user/model';
+
 export interface SongModel {
   id: number;
   name: string;
-  authors: string[];
+  authors: UserModel[];
   cover: string;
   file: string;
 }

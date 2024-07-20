@@ -6,7 +6,7 @@ import { SongModel } from '@/entities/song/model';
 
 const MusicPlayer = ({ song }: { song: SongModel }) => {
   const title = song.name;
-  const author = song.authors.join(', ');
+  const author = song.authors.map((a) => a.name).join(', ');
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [sliderProgress, setSliderProgress] = useState(0);

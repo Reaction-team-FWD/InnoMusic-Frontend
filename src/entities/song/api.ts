@@ -20,8 +20,8 @@ class SongService {
     });
   }
 
-  async delete(id: number) {
-    await api.fetch(`/song/${id}`, { method: 'DELETE' });
+  async delete(id: number, token: string) {
+    await api.authorizedFetch(`/song/${id}`, token, { method: 'DELETE' });
   }
 }
 
