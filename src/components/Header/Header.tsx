@@ -1,12 +1,14 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useReducer, useState } from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import '@/app/globals.scss';
+import { isLoggedIn, logOut } from '@/utils/auth';
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -42,12 +44,26 @@ const Header: FC = () => {
         <Link href={'./'} className={styles.stick}>
           |
         </Link>
-        <Link href={'./signup'} className={styles.button}>
-          Sign up
-        </Link>
-        <Link href={'./login'} className={styles.button}>
-          Log in
-        </Link>
+        {isLoggedIn() ? (
+          <button
+            onClick={() => {
+              logOut();
+              forceUpdate();
+            }}
+            className={styles.button}
+          >
+            Log out
+          </button>
+        ) : (
+          <>
+            <Link href={'./signup'} className={styles.button}>
+              Sign up
+            </Link>
+            <Link href={'./login'} className={styles.button}>
+              Log in
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

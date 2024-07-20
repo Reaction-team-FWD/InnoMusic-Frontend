@@ -6,3 +6,12 @@ export function getTokenOrAlert() {
   }
   return token;
 }
+
+export function isLoggedIn() {
+  return localStorage.getItem('token') !== null;
+}
+
+export function logOut() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+}

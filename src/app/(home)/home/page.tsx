@@ -15,6 +15,7 @@ export const metadata = {
     images: [{ url: '/img/collectionCover.png' }],
     type: 'website',
   },
+  metadataBase: new URL('https://google.com'),
 };
 
 const AlbumsPage: React.FC = () => {
