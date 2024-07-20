@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } catch (e) {
     return {};
   }
-  const authors = song.authors.join(', ');
+  const authors = song.authors.map((a) => a.name).join(', ');
   const year = 2024;
 
   const title = `${song.name} - ${authors}`;

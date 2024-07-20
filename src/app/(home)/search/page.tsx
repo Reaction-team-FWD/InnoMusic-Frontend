@@ -16,9 +16,27 @@ const defaultCover = '/img/albumCover.png';
 const defaultSong = 'https://www.ostmusic.org/sound/track/undertale/100.%20MEGALOVANIA.mp3';
 
 const songExamples: SongModel[] = [
-  { id: 1, name: 'Город под подошвой', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
-  { id: 2, name: 'ОЙДА', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
-  { id: 3, name: 'Я хейтер', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
+  {
+    id: 1,
+    name: 'Город под подошвой',
+    authors: [{ name: 'Oxxxymiron', id: 1, login: 'oxxx' }],
+    cover: defaultCover,
+    file: defaultSong,
+  },
+  {
+    id: 2,
+    name: 'ОЙДА',
+    authors: [{ name: 'Oxxxymiron', id: 1, login: 'oxxx' }],
+    cover: defaultCover,
+    file: defaultSong,
+  },
+  {
+    id: 3,
+    name: 'Я хейтер',
+    authors: [{ name: 'Oxxxymiron', id: 1, login: 'oxxx' }],
+    cover: defaultCover,
+    file: defaultSong,
+  },
 ];
 
 const artistExamples: Artist[] = [

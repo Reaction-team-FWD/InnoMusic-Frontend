@@ -1,7 +1,13 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import styles from './Content.module.css';
 import Image from 'next/image';
 import { SongModel } from '@/entities/song/model';
+import { getTokenOrAlert, isLoggedIn } from '@/utils/auth';
+import { getCurrentUser } from '@/utils/user';
+import songService from '@/entities/song/api';
+import { useRouter } from 'next/navigation';
 
 const albums = [
   { id: '1', title: 'After Hours', artist: 'The Weeknd', year: 2020 },
@@ -26,9 +32,18 @@ const albums = [
 ];
 
 const Content = ({ song }: { song: SongModel }) => {
+  const [isAuthor, setIsAuthor] = useState(false);
+  useEffect(() => setIsAuthor(isLoggedIn() && song.authors.map((a) => a.id).includes(getCurrentUser().id)));
+  const router = useRouter();
+
   const title = song.name;
-  const artist = song.authors.join(', ');
+  const artist = song.authors.map((a) => a.name).join(', ');
   const year = '2024';
+
+  async function deleteSong() {
+    await songService.delete(song.id, getTokenOrAlert());
+    router.push('/home');
+  }
 
   return (
     <div className={styles.songPage}>
@@ -56,6 +71,11 @@ const Content = ({ song }: { song: SongModel }) => {
               <button className={styles.listenButton}>Listen</button>
               <button className={styles.likeButton}>Like</button>
               <button className={styles.downloadButton}>Download</button>
+              {isAuthor && (
+                <button className={styles.moreButton} onClick={deleteSong}>
+                  Delete song
+                </button>
+              )}
               <button className={styles.moreButton}>...</button>
             </div>
           </div>

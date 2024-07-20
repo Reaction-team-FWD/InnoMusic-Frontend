@@ -6,7 +6,7 @@ import albumCover from '@/../public/img/albumCover.png';
 import { SongModel } from '@/entities/song/model';
 
 const Song = ({ song }: { song: SongModel }) => {
-  const authors = song.authors.join(', ');
+  const authors = song.authors.map((a) => a.name).join(', ');
 
   return (
     <Link className={styles.songLink} href={`/home/${song.id}`}>
