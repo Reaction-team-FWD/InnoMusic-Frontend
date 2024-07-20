@@ -1,17 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './login.module.scss';
 import '../../globals.scss';
 import authService from '@/entities/auth/api';
 import userService from '@/entities/user/api';
 import { getTokenOrAlert } from '@/utils/auth';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setNotification] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -27,6 +29,7 @@ export default function Login() {
       localStorage.setItem('user', JSON.stringify(user));
 
       setNotification('You have logged in!');
+      router.push('/home');
     } catch (error) {
       setNotification('Invalid username or password');
     } finally {

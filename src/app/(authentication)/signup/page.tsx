@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from './signup.module.scss';
 import '../../globals.scss';
 import authService from '@/entities/auth/api';
+import { useRouter } from 'next/navigation';
 
 export default function SignUpPage() {
   const [username, setUsername] = useState('');
@@ -12,6 +13,7 @@ export default function SignUpPage() {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -26,8 +28,8 @@ export default function SignUpPage() {
 
     try {
       await authService.register({ name: username, login: email, password });
-
       setError('Registration successful!');
+      router.push('/login');
     } catch (error) {
       setError('Registration failed. Please try again.');
     } finally {
