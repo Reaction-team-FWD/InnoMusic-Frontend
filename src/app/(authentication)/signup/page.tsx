@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import axios from 'axios';
 import styles from './signup.module.scss';
 import '../../globals.scss';
+import authService from '@/entities/auth/api';
+import { useRouter } from 'next/navigation';
+import { validateEmail } from '@/utils/validation';
 
 export default function SignUpPage() {
   const [username, setUsername] = useState('');
@@ -12,11 +14,18 @@ export default function SignUpPage() {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     setError('');
+
+    if (!validateEmail(email)) {
+      setError('Invalid email');
+      setLoading(false);
+      return;
+    }
 
     if (password !== repeatPassword) {
       setError('Passwords do not match');
@@ -25,21 +34,9 @@ export default function SignUpPage() {
     }
 
     try {
-      const response = await axios.post(
-        'http://84.235.249.242:8000/auth/register',
-        {
-          name: username,
-          login: email,
-          password: password,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-
+      await authService.register({ name: username, login: email, password });
       setError('Registration successful!');
+      router.push('/login');
     } catch (error) {
       setError('Registration failed. Please try again.');
     } finally {

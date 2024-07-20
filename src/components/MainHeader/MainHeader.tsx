@@ -1,12 +1,16 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SearchInput } from '@/components/SearchInput';
 import styles from './MainHeader.module.scss';
 import Link from 'next/link';
 import '@/app/globals.scss';
 import MobileHeader from '../MobileHeader/MobileHeader';
+import { isLoggedIn, logOut } from '@/utils/auth';
 
 const Header = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => setLoggedIn(isLoggedIn()));
+
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -31,12 +35,26 @@ const Header = () => {
           </Link>
         </nav>
         <div className={styles.authorization}>
-          <Link href={'/signup'}>
-            <button className={styles.signup}>Sign up</button>
-          </Link>
-          <Link href={'/login'}>
-            <button className={styles.login}>Log in</button>
-          </Link>
+          {loggedIn ? (
+            <button
+              onClick={() => {
+                logOut();
+                setLoggedIn(false);
+              }}
+              className={styles.login}
+            >
+              Log out
+            </button>
+          ) : (
+            <>
+              <Link href={'./signup'}>
+                <button className={styles.signup}>Sign up</button>
+              </Link>
+              <Link href={'./login'}>
+                <button className={styles.login}>Log in</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
       <MobileHeader />

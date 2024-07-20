@@ -1,20 +1,14 @@
-// src/pages/songs.tsx
 import { SongsView } from '@/components/Songs/SongsView';
 
 import React from 'react';
-
-interface SongData {
-  id: string;
-  name: string;
-  artist: string;
-  duration: string;
-}
+import songService from '@/entities/song/api';
+import { SongModel } from '@/entities/song/model';
 
 export const getServerSideProps = async () => {
-  let initialSongs: SongData[] = [];
+  let initialSongs: SongModel[] = [];
   try {
-    const response = await fetch('https://b7ff-188-130-155-162.ngrok-free.app/song/all');
-    initialSongs = await response.json();
+    const response = await songService.getAll();
+    initialSongs.push(...response);
   } catch (error) {
     console.error('Failed to fetch songs:', error);
   }

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import styles from './main.module.scss';
 import './globals.scss';
 import React from 'react';
@@ -6,6 +6,13 @@ import React from 'react';
 export const metadata: Metadata = {
   title: 'InnoMusic',
   description: 'The best app to listen to a music!',
+  robots: 'index, follow',
+  metadataBase: new URL('https://acme.com'),
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({

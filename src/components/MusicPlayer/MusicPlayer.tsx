@@ -1,34 +1,40 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './MusicPlayer.module.css';
-interface ContentProps {
-  searchParams: URLSearchParams;
-}
-const MusicPlayer: React.FC<ContentProps> = ({ searchParams }) => {
-  const title = searchParams.get('title') || 'Title';
-  const author = searchParams.get('artist') || 'Artist';
+import { SongModel } from '@/entities/song/model';
+
+const MusicPlayer = ({ song }: { song: SongModel }) => {
+  const title = song.name;
+  const author = song.authors.join(', ');
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [sliderProgress, setSliderProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
   useEffect(() => {
     const audio = audioRef.current;
+
     const handleTimeUpdate = () => {
       if (audio && !isNaN(audio.duration)) {
         setProgress((audio.currentTime / audio.duration) * 100);
         setSliderProgress((audio.currentTime / audio.duration) * 100);
       }
     };
+
     const handleLoadedMetadata = () => {
       if (audio) {
         setDuration(audio.duration);
       }
     };
+
     if (audio) {
       audio.addEventListener('timeupdate', handleTimeUpdate);
       audio.addEventListener('loadedmetadata', handleLoadedMetadata);
     }
+
     return () => {
       if (audio) {
         audio.removeEventListener('timeupdate', handleTimeUpdate);
@@ -36,6 +42,7 @@ const MusicPlayer: React.FC<ContentProps> = ({ searchParams }) => {
       }
     };
   }, []);
+
   const togglePlayPause = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -46,26 +53,31 @@ const MusicPlayer: React.FC<ContentProps> = ({ searchParams }) => {
       setIsPlaying(!isPlaying);
     }
   };
+
   const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
     setSliderProgress(value);
   };
+
   const handleProgressCommit = () => {
     if (audioRef.current && !isNaN(audioRef.current.duration)) {
       audioRef.current.currentTime = (audioRef.current.duration / 100) * sliderProgress;
     }
   };
+
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (audioRef.current) {
       audioRef.current.volume = Number(e.target.value) / 100;
     }
   };
+
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
   };
+
   return (
     <div className={styles.playerWrapper}>
-      <audio ref={audioRef} src="/path"></audio>
+      <audio ref={audioRef} src={song.file}></audio>
       <div className={styles.trackInfo}>
         <div className={styles.trackDetails}>
           <span className={styles.songTitle}>{title}</span>
@@ -197,4 +209,5 @@ const MusicPlayer: React.FC<ContentProps> = ({ searchParams }) => {
     </div>
   );
 };
+
 export default MusicPlayer;

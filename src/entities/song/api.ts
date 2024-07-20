@@ -3,15 +3,21 @@ import { SongModel, CreateSongModel } from '@/entities/song/model';
 
 class SongService {
   async getAll(): Promise<SongModel[]> {
-    return await api.fetch('/song/all').then((r) => r.json());
+    return await api.fetch('/song/all');
   }
 
   async get(id: number): Promise<SongModel> {
-    return await api.fetch(`/song/${id}`).then((r) => r.json());
+    return await api.fetch(`/song/${id}`);
   }
 
   async create(song: CreateSongModel, token: string): Promise<SongModel> {
-    return await api.authorizedFetch('/song/create', token, { method: 'POST', body: JSON.stringify(song) });
+    return await api.authorizedFetch('/song/create', token, {
+      method: 'POST',
+      body: JSON.stringify(song),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   async delete(id: number) {

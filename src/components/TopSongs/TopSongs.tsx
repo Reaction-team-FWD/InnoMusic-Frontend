@@ -1,14 +1,13 @@
 import classes from './TopSongs.module.scss';
-import { Song, SongCardProps } from '@/components/Song';
+import { Song } from '@/components/Song';
 import React from 'react';
 import { SearchResultBlock } from '@/components/SearchResultBlock';
+import { SongModel } from '@/entities/song/model';
 
-export default function TopSongs({ songs }: { songs: SongCardProps[] }) {
+export default function TopSongs({ songs }: { songs: SongModel[] }) {
   let songsElements: React.ReactNode[] = [];
   for (let song of songs) {
-    songsElements.push(
-      <Song id="1" key={song.title} title={song.title} artist={song.artist} duration={song.duration} />
-    );
+    songsElements.push(<Song key={song.id} song={song} />);
   }
 
   return (

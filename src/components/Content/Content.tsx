@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Content.module.css';
 import Image from 'next/image';
+import { SongModel } from '@/entities/song/model';
 
 const albums = [
   { id: '1', title: 'After Hours', artist: 'The Weeknd', year: 2020 },
@@ -24,21 +25,24 @@ const albums = [
   { id: '9', title: 'High Off Life', artist: 'Future', year: 2020 },
 ];
 
-interface ContentProps {
-  searchParams: URLSearchParams;
-}
-
-const Content: React.FC<ContentProps> = ({ searchParams }) => {
-  const title = searchParams.get('title') || 'Her Eyes';
-  const artist = searchParams.get('artist') || 'Narvent';
-  const year = searchParams.get('year') || '2024';
+const Content = ({ song }: { song: SongModel }) => {
+  const title = song.name;
+  const artist = song.authors.join(', ');
+  const year = '2024';
 
   return (
     <div className={styles.songPage}>
       <div className={styles.leftPart}>
         <div className={styles.container}>
           <div className={styles.albumCover}>
-            <Image src="/img/albumCover.png" alt="Album cover" layout="fill" objectFit="cover" />
+            <Image
+              className={styles.image}
+              src={song.cover}
+              alt="Album cover"
+              width={'100'}
+              height={'100'}
+              objectFit="cover"
+            />
           </div>
           <div className={styles.albumInfo}>
             <div className={styles.albumLabel}>Album</div>
