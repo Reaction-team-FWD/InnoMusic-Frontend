@@ -14,9 +14,7 @@ describe('AboutPage', () => {
     const missionTitle = screen.getByRole('heading', { name: /Our Mission/i });
     expect(missionTitle).toBeInTheDocument();
 
-    const missionContent = screen.getByText(
-      /Our mission is to unlock the potential of human creativity/i
-    );
+    const missionContent = screen.getByText(/Our mission is to unlock the potential of human creativity/i);
     expect(missionContent).toBeInTheDocument();
 
     // Check for the Our Team section

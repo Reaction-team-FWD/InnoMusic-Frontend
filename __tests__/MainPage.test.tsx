@@ -7,9 +7,7 @@ describe('MainPage', () => {
     render(<MainPage />);
 
     // Check for the title in the introduction section
-    const introductionTitle = screen.getByText(
-      /Have you already tried InnoMusic\?/i
-    );
+    const introductionTitle = screen.getByText(/Have you already tried InnoMusic\?/i);
     expect(introductionTitle).toBeInTheDocument();
 
     // Check for the description in the introduction section
@@ -31,9 +29,7 @@ describe('MainPage', () => {
     expect(seeOtherPlansLink).toHaveAttribute('href', './plans');
 
     // Check for the title in the benefits section
-    const benefitsTitle = screen.getByText(
-      /Sign up now and claim your free trial!/i
-    );
+    const benefitsTitle = screen.getByText(/Sign up now and claim your free trial!/i);
     expect(benefitsTitle).toBeInTheDocument();
   });
 });

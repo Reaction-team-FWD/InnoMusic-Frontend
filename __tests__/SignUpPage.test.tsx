@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import SignUpPage from '@/app/(authentication)/signup/page';
 import '@testing-library/jest-dom';
 import axios from 'axios';
@@ -6,6 +6,21 @@ import axios from 'axios';
 // Mock axios
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
+
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve({ access_token: '', token_type: '' }),
+    status: 200,
+  })
+) as unknown as jest.Mock;
+
+jest.mock('next/navigation', () => ({
+  useRouter() {
+    return {
+      push: () => null,
+    };
+  },
+}));
 
 describe('SignUpPage', () => {
   it('renders the Sign Up form with all fields', async () => {
@@ -56,12 +71,9 @@ describe('SignUpPage', () => {
     fireEvent.change(screen.getByLabelText('Password', { selector: 'input' }), {
       target: { value: 'password' },
     });
-    fireEvent.change(
-      screen.getByLabelText('Repeat Password', { selector: 'input' }),
-      {
-        target: { value: 'password' },
-      }
-    );
+    fireEvent.change(screen.getByLabelText('Repeat Password', { selector: 'input' }), {
+      target: { value: 'password' },
+    });
     // Submit the form
     fireEvent.click(screen.getByRole('button', { name: /Sign Up/i }));
 
