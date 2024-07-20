@@ -139,6 +139,9 @@
   margin: auto;
   margin-top: 4em;
   margin-bottom: 0;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .signupDesc {
