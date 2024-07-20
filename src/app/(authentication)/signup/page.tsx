@@ -20,6 +20,12 @@ export default function SignUpPage() {
     setLoading(true);
     setError('');
 
+    if (!validateEmail(email)) {
+      setError('Invalid email');
+      setLoading(false);
+      return;
+    }
+
     if (password !== repeatPassword) {
       setError('Passwords do not match');
       setLoading(false);

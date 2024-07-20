@@ -82,10 +82,6 @@ const startSongs: SongModel[] = [
   },
 ];
 
-function validateUrl(url: string) {
-  return url.match(/http(s?):\/\/[a-zA-Z][/.a-zA-Z\-]*\.(?:jpg|gif|png|jpeg|mp3)/);
-}
-
 export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
   const [songs, setSongs] = useState<SongModel[]>(initialSongs || []);
   // Убедитесь, что начальное состояние является массивом
