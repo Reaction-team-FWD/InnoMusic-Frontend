@@ -13,7 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   let id = parseInt(params.id);
   if (isNaN(id)) return {};
 
-  const song = await songService.get(id);
+  let song;
+  try {
+    song = await songService.get(id);
+  } catch (e) {
+    return {};
+  }
   const authors = song.authors.join(', ');
   const year = 2024;
 
@@ -34,10 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const SongPage = async ({ params }: Props) => {
-  const parsedId = parseInt(params.id);
-  if (isNaN(parsedId)) return notFound();
+  const id = parseInt(params.id);
+  if (isNaN(id)) return notFound();
 
-  const song = await songService.get(parsedId);
+  let song;
+  try {
+    song = await songService.get(id);
+  } catch (e) {
+    return notFound();
+  }
 
   return (
     <>

@@ -138,7 +138,7 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
       </form>
       <div className={styles.songs}>
         {[...startSongs, ...songs].map((song) => (
-          <Song key={song.id} id={song.id} title={song.name} artist={song.authors.join(', ')} duration="3:00" />
+          <Song key={song.id} song={song} />
         ))}
       </div>
     </div>
