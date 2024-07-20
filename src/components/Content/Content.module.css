@@ -1,6 +1,5 @@
 .songPage {
   display: flex;
-  height: 95vh;
   padding: 20px;
   background-color: #000;
   flex-direction: row;
@@ -9,6 +8,7 @@
 .leftPart {
   display: flex;
   flex-direction: column;
+  width: 60%;
   max-width: 800px;
   margin-right: 30px;
 }
@@ -24,8 +24,9 @@
 
 .albumCover {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 20em;
+  height: 20em;
+  aspect-ratio: 1/1;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -153,7 +154,6 @@
   padding: 30px;
   color: white;
   overflow-y: auto;
-  height: 660px;
 }
 
 .relatedTitle {
@@ -198,6 +198,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .related {
+    display: none;
+  }
+
   .songPage {
     flex-direction: column;
     height: 130vh;

@@ -52,6 +52,7 @@ const SongPage = async ({ params }: Props) => {
   return (
     <>
       <Content song={song} />
+      <div style={{ visibility: 'hidden', height: '90px' }}></div>
       <MusicPlayer song={song} />
     </>
   );
