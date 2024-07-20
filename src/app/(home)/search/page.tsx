@@ -1,19 +1,23 @@
 import { TopResult } from '@/components/TopResult';
 import { TopSongs } from '@/components/TopSongs';
-import { SongCardProps } from '@/components/Song';
 import { Artists } from '@/components/Artists';
 import { Artist } from '@/components/Artist/';
 import { AlbumsSearch } from '@/components/AlbumsSearch';
 import { AlbumProps } from '@/components/Album';
 import classes from './search.module.scss';
+import { SongModel } from '@/entities/song/model';
 
 const topResultImageExample =
   'https://p-u.popcdn.net/event_details/posters/' +
   '000/017/058/large/0b28f64e4745d437d6f458a7dbd311df61ec3c3b.jpg?1705064671';
-const songExamples: SongCardProps[] = [
-  { title: 'Город под подошвой', artist: 'Oxxxymiron', duration: '3:00' },
-  { title: 'ОЙДА', artist: 'Oxxxymiron', duration: '3:10' },
-  { title: 'Я хейтер', artist: 'Oxxxymiron', duration: '2:59' },
+
+const defaultCover = '/img/albumCover.png';
+const defaultSong = 'https://www.ostmusic.org/sound/track/undertale/100.%20MEGALOVANIA.mp3';
+
+const songExamples: SongModel[] = [
+  { id: 1, name: 'Город под подошвой', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
+  { id: 2, name: 'ОЙДА', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
+  { id: 3, name: 'Я хейтер', authors: ['Oxxxymiron'], cover: defaultCover, file: defaultSong },
 ];
 const artistExamples: Artist[] = [
   { name: 'Oxxxymiron', imageUrl: topResultImageExample },

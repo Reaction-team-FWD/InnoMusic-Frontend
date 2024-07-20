@@ -5,76 +5,77 @@ import Song from '../Song/Song';
 import { CreateSongModel, SongModel } from '@/entities/song/model';
 import songService from '@/entities/song/api';
 import { getTokenOrAlert } from '@/utils/auth';
+import { validateUrl } from '@/utils/validation';
 
 const defaultCover = 'https://inno-music-frontend.vercel.app/_next/image?url=%2Fimg%2FalbumCover.png&w=750&q=75';
 const defaultSong = 'https://www.ostmusic.org/sound/track/undertale/100.%20MEGALOVANIA.mp3';
 
 const startSongs: SongModel[] = [
   {
-    id: '1',
+    id: 1,
     name: 'Blinding Lights',
     authors: ['The Weeknd'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '2',
+    id: 2,
     name: 'Watermelon Sugar',
     authors: ['Harry Styles'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '3',
+    id: 3,
     name: 'Don’t Start Now',
     authors: ['Dua Lipa'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '4',
+    id: 4,
     name: 'Rockstar',
     authors: ['DaBaby'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '5',
+    id: 5,
     name: 'Circles',
     authors: ['Post Malone'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '6',
+    id: 6,
     name: 'Savage Love',
     authors: ['Jawsh 685 & Jason Derulo'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '7',
+    id: 7,
     name: 'Roses',
     authors: ['SAINt JHN'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '8',
+    id: 8,
     name: 'Say So',
     authors: ['Doja Cat'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '9',
+    id: 9,
     name: 'Adore You',
     authors: ['Harry Styles'],
     cover: defaultCover,
     file: defaultSong,
   },
   {
-    id: '10',
+    id: 10,
     name: 'Life Is Good',
     authors: ['Future'],
     cover: defaultCover,

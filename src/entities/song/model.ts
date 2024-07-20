@@ -1,5 +1,5 @@
 export interface SongModel {
-  id: string;
+  id: number;
   name: string;
   authors: string[];
   cover: string;
