@@ -1,82 +1,90 @@
 'use client';
-import { InferGetServerSidePropsType } from 'next';
 import React, { useState } from 'react';
-import styles from '@/components/Songs/Songs.module.scss';
+import styles from '@/components/Songs/SongsView.module.scss';
 import Song from '../Song/Song';
-import { getServerSideProps } from '@/components/Songs/Songs';
+import { CreateSongModel, SongModel } from '@/entities/song/model';
+import songService from '@/entities/song/api';
+import { getTokenOrAlert } from '@/utils/auth';
 
-interface SongData {
-  id: string;
-  name: string;
-  artist: string;
-  duration: string;
-}
+const defaultCover = 'https://inno-music-frontend.vercel.app/_next/image?url=%2Fimg%2FalbumCover.png&w=750&q=75';
+const defaultSong = 'https://www.ostmusic.org/sound/track/undertale/100.%20MEGALOVANIA.mp3';
 
-const StartSongs: SongData[] = [
+const startSongs: SongModel[] = [
   {
     id: '1',
     name: 'Blinding Lights',
-    artist: 'The Weeknd',
-    duration: '3:20',
+    authors: ['The Weeknd'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '2',
     name: 'Watermelon Sugar',
-    artist: 'Harry Styles',
-    duration: '2:54',
+    authors: ['Harry Styles'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '3',
     name: 'Don’t Start Now',
-    artist: 'Dua Lipa',
-    duration: '3:03',
+    authors: ['Dua Lipa'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '4',
     name: 'Rockstar',
-    artist: 'DaBaby',
-    duration: '3:01',
+    authors: ['DaBaby'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '5',
     name: 'Circles',
-    artist: 'Post Malone',
-    duration: '3:35',
+    authors: ['Post Malone'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '6',
     name: 'Savage Love',
-    artist: 'Jawsh 685 & Jason Derulo',
-    duration: '2:51',
+    authors: ['Jawsh 685 & Jason Derulo'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '7',
     name: 'Roses',
-    artist: 'SAINt JHN',
-    duration: '2:53',
+    authors: ['SAINt JHN'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '8',
     name: 'Say So',
-    artist: 'Doja Cat',
-    duration: '3:57',
+    authors: ['Doja Cat'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '9',
     name: 'Adore You',
-    artist: 'Harry Styles',
-    duration: '3:27',
+    authors: ['Harry Styles'],
+    cover: defaultCover,
+    file: defaultSong,
   },
   {
     id: '10',
     name: 'Life Is Good',
-    artist: 'Future',
-    duration: '3:57',
+    authors: ['Future'],
+    cover: defaultCover,
+    file: defaultSong,
   },
 ];
 
-export function SongsView({ initialSongs }: { initialSongs?: SongData[] }) {
-  const [songs, setSongs] = useState<SongData[]>(initialSongs || []); // Убедитесь, что начальное состояние является массивом
+export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
+  const [songs, setSongs] = useState<SongModel[]>(initialSongs || []);
+  // Убедитесь, что начальное состояние является массивом
 
   const [title, setTitle] = useState<string>('');
   const [artist, setArtist] = useState<string>('');
@@ -85,24 +93,18 @@ export function SongsView({ initialSongs }: { initialSongs?: SongData[] }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (title.trim() && artist.trim() && duration.trim()) {
-      const newSong: SongData = {
-        id: (songs.length + 1).toString(),
+      const newSong: CreateSongModel = {
         name: title,
-        artist,
-        duration,
+        extra_authors: [],
+        cover: defaultCover,
+        file: defaultSong,
       };
-      const newSongs = [...songs, newSong];
+      const song = await songService.create(newSong, getTokenOrAlert());
+      const newSongs = [...songs, song];
       setSongs(newSongs);
       setTitle('');
       setArtist('');
       setDuration('');
-      if (typeof window !== 'undefined') {
-        const response = await fetch('https://b7ff-188-130-155-162.ngrok-free.app/song/create', {
-          method: 'POST',
-          body: JSON.stringify(newSong),
-        });
-        //localStorage.setItem('songs', JSON.stringify(newSongs));
-      }
     }
   };
 
@@ -135,11 +137,8 @@ export function SongsView({ initialSongs }: { initialSongs?: SongData[] }) {
         </button>
       </form>
       <div className={styles.songs}>
-        {StartSongs.map((song) => (
-          <Song key={song.id} id={song.id} title={song.name} artist={song.artist} duration={song.duration} />
-        ))}
-        {songs.map((song) => (
-          <Song key={song.id} id={song.id} title={song.name} artist={song.artist} duration={song.duration} />
+        {[...startSongs, ...songs].map((song) => (
+          <Song key={song.id} id={song.id} title={song.name} artist={song.authors.join(', ')} duration="3:00" />
         ))}
       </div>
     </div>

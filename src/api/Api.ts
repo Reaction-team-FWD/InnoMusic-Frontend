@@ -13,7 +13,7 @@ class Api {
     if (params === undefined) params = {};
     if (params?.headers === undefined) params.headers = {};
     params.headers = new Headers(params.headers);
-    params.headers.append('Authorization', token);
+    params.headers.set('Authorization', token);
     return await this.fetch(path, params);
   }
 }

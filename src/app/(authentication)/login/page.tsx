@@ -4,6 +4,8 @@ import { useState } from 'react';
 import styles from './login.module.scss';
 import '../../globals.scss';
 import authService from '@/entities/auth/api';
+import userService from '@/entities/user/api';
+import { getTokenOrAlert } from '@/utils/auth';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -19,8 +21,11 @@ export default function Login() {
     try {
       const response = await authService.login({ username, password });
 
-      const { access_token } = response;
-      localStorage.setItem('token', access_token);
+      const { access_token, token_type } = response;
+      localStorage.setItem('token', token_type + ' ' + access_token);
+      let user = await userService.me(getTokenOrAlert());
+      localStorage.setItem('user', JSON.stringify(user));
+
       setNotification('You have logged in!');
     } catch (error) {
       setNotification('Invalid username or password');

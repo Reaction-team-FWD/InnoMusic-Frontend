@@ -8,7 +8,7 @@ export interface SongModel {
 
 export interface CreateSongModel {
   name: string;
-  authors: string[];
+  extra_authors?: number[];
   cover: string;
   file: string;
 }
