@@ -1,5 +1,5 @@
 'use client';
-import React, { useReducer } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SearchInput } from '@/components/SearchInput';
 import styles from './MainHeader.module.scss';
 import Link from 'next/link';
@@ -8,7 +8,8 @@ import MobileHeader from '../MobileHeader/MobileHeader';
 import { isLoggedIn, logOut } from '@/utils/auth';
 
 const Header = () => {
-  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => setLoggedIn(isLoggedIn()));
 
   return (
     <div className={styles.container}>
@@ -34,11 +35,11 @@ const Header = () => {
           </Link>
         </nav>
         <div className={styles.authorization}>
-          {isLoggedIn() ? (
+          {loggedIn ? (
             <button
               onClick={() => {
                 logOut();
-                forceUpdate();
+                setLoggedIn(false);
               }}
               className={styles.login}
             >

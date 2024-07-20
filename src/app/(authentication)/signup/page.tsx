@@ -5,6 +5,7 @@ import styles from './signup.module.scss';
 import '../../globals.scss';
 import authService from '@/entities/auth/api';
 import { useRouter } from 'next/navigation';
+import { validateEmail } from '@/utils/validation';
 
 export default function SignUpPage() {
   const [username, setUsername] = useState('');

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'InnoMusic',
   description: 'The best app to listen to a music!',
   robots: 'index, follow',
+  metadataBase: new URL('https://acme.com'),
 };
 
 export const viewport: Viewport = {

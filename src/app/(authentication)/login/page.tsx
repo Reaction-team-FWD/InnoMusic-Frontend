@@ -7,6 +7,7 @@ import authService from '@/entities/auth/api';
 import userService from '@/entities/user/api';
 import { getTokenOrAlert } from '@/utils/auth';
 import { useRouter } from 'next/navigation';
+import { validateEmail } from '@/utils/validation';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -21,6 +22,12 @@ export default function Login() {
     setNotification('');
 
     try {
+      if (!validateEmail(username)) {
+        setNotification('Invalid email');
+        setLoading(false);
+        return;
+      }
+
       const response = await authService.login({ username, password });
 
       const { access_token, token_type } = response;

@@ -102,11 +102,11 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
       newColors[0] = true;
       ok = false;
     }
-    if (!validateUrl(cover)) {
+    if (cover && !validateUrl(cover)) {
       newColors[1] = true;
       ok = false;
     }
-    if (!validateUrl(file)) {
+    if (file && !validateUrl(file)) {
       newColors[2] = true;
       ok = false;
     }
