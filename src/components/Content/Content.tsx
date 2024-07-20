@@ -35,7 +35,14 @@ const Content = ({ song }: { song: SongModel }) => {
       <div className={styles.leftPart}>
         <div className={styles.container}>
           <div className={styles.albumCover}>
-            <Image src={song.cover} alt="Album cover" layout="fill" objectFit="cover" />
+            <Image
+              className={styles.image}
+              src={song.cover}
+              alt="Album cover"
+              width={'100'}
+              height={'100'}
+              objectFit="cover"
+            />
           </div>
           <div className={styles.albumInfo}>
             <div className={styles.albumLabel}>Album</div>
