@@ -82,6 +82,10 @@ const startSongs: SongModel[] = [
   },
 ];
 
+function validateUrl(url: string) {
+  return url.match(/http(s?):\/\/[a-zA-Z][/.a-zA-Z\-]*\.(?:jpg|gif|png|jpeg|mp3)/);
+}
+
 export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
   const [songs, setSongs] = useState<SongModel[]>(initialSongs || []);
   // Убедитесь, что начальное состояние является массивом
@@ -89,12 +93,31 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
   const [title, setTitle] = useState<string>('');
   const [cover, setCover] = useState<string>('');
   const [file, setFile] = useState<string>('');
+  const [colors, setColors] = useState([false, false, false]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (title.trim()) {
+    let trimmedTitle = title.trim();
+    let newColors = [false, false, false];
+
+    let ok = true;
+    if (!trimmedTitle) {
+      newColors[0] = true;
+      ok = false;
+    }
+    if (!validateUrl(cover)) {
+      newColors[1] = true;
+      ok = false;
+    }
+    if (!validateUrl(file)) {
+      newColors[2] = true;
+      ok = false;
+    }
+    setColors(newColors);
+
+    if (ok) {
       const newSong: CreateSongModel = {
-        name: title,
+        name: trimmedTitle,
         extra_authors: [],
         cover: cover || defaultCover,
         file: file || defaultSong,
@@ -115,24 +138,27 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          onInput={() => setColors([false, false, false])}
           placeholder="Enter title"
-          className={styles.input}
+          className={`${styles.input} ${colors[0] ? styles.bad_input : ''}`}
         />
         <input
           type="text"
           value={cover}
           onChange={(e) => setCover(e.target.value)}
+          onInput={() => setColors([false, false, false])}
           placeholder="Enter cover link"
           required={false}
-          className={styles.input}
+          className={`${styles.input} ${colors[1] ? styles.bad_input : ''}`}
         />
         <input
           type="text"
           value={file}
           onChange={(e) => setFile(e.target.value)}
+          onInput={() => setColors([false, false, false])}
           placeholder="Enter file link"
           required={false}
-          className={styles.input}
+          className={`${styles.input} ${colors[2] ? styles.bad_input : ''}`}
         />
         <button type="submit" className={styles.submitButton}>
           Add Song
@@ -140,7 +166,7 @@ export function SongsView({ initialSongs }: { initialSongs?: SongModel[] }) {
       </form>
       <div className={styles.songs}>
         {[...startSongs, ...songs].map((song) => (
-          <Song key={song.id} song={song} />
+          <Song key={song.id} song={{ ...song, cover: song.cover ?? defaultCover }} />
         ))}
       </div>
     </div>

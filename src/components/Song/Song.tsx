@@ -12,7 +12,7 @@ const Song = ({ song }: { song: SongModel }) => {
     <Link className={styles.songLink} href={`/home/${song.id}`}>
       <div className={styles.song}>
         <div className={styles.songDetails}>
-          <Image className={styles.songCover} src={albumCover} alt={'cover'}></Image>
+          <Image className={styles.songCover} src={song.cover} width={100} height={100} alt={'cover'}></Image>
           <div className={styles.songTitleArtist}>
             <div className={styles.songTitle}>{song.name}</div>
             <div className={styles.songArtist}>{authors}</div>
